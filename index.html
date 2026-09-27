@@ -1,58 +1,549 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>LivePulse</title>
+  <title>LivePulse | Every Child Deserves a Chance</title>
 
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: #f5f7fa;
-            color: #222;
-            text-align: center;
-        }
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-        header {
-            padding: 80px 20px;
-            background: #111827;
-            color: white;
-        }
+    html {
+      scroll-behavior: smooth;
+    }
 
-        h1 {
-            font-size: 56px;
-            margin: 0 0 20px;
-        }
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f7f9fc;
+      color: #172033;
+      line-height: 1.6;
+    }
 
-        p {
-            font-size: 20px;
-        }
+    /* HEADER */
+    header {
+      background: #101a35;
+      color: white;
+      padding: 22px 7%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
 
-        main {
-            padding: 60px 20px;
-        }
+    .logo {
+      font-size: 30px;
+      font-weight: 800;
+      letter-spacing: 1px;
 
-        .box {
-            max-width: 700px;
-            margin: auto;
-            background: white;
-            padding: 40px;
-            border-radius: 15px;
-            box-shadow: 0 5px 25px rgba(0,0,0,0.08);
-        }
+      background: linear-gradient(
+        90deg,
+        #ff4f81,
+        #ffb347,
+        #6ee7b7,
+        #60a5fa
+      );
 
-        footer {
-            margin-top: 60px;
-            padding: 25px;
-            color: #666;
-        }
-    </style>
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 25px;
+      font-size: 15px;
+      font-weight: 600;
+      opacity: 0.9;
+    }
+
+    nav a:hover {
+      opacity: 1;
+    }
+
+    /* HERO */
+    .hero {
+      min-height: 620px;
+      padding: 100px 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+
+      background:
+        radial-gradient(circle at 20% 20%, #ffd6e5 0, transparent 30%),
+        radial-gradient(circle at 80% 30%, #d8f7ff 0, transparent 30%),
+        linear-gradient(135deg, #ffffff, #eef7ff);
+    }
+
+    .hero-content {
+      max-width: 850px;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      margin-bottom: 20px;
+      padding: 8px 18px;
+      border-radius: 30px;
+
+      background: #fff0f5;
+      color: #e83e72;
+
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 2px;
+    }
+
+    .hero h1 {
+      font-size: clamp(45px, 7vw, 78px);
+      line-height: 1.05;
+      margin-bottom: 25px;
+
+      background: linear-gradient(
+        90deg,
+        #ff477e,
+        #ff8c42,
+        #5b8def,
+        #6bcf9a
+      );
+
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero p {
+      max-width: 700px;
+      margin: auto;
+      font-size: 20px;
+      color: #526078;
+    }
+
+    .button {
+      display: inline-block;
+      margin-top: 35px;
+      padding: 15px 30px;
+      border-radius: 50px;
+
+      background: linear-gradient(
+        90deg,
+        #ff477e,
+        #ff8c42
+      );
+
+      color: white;
+      text-decoration: none;
+      font-weight: 700;
+
+      box-shadow: 0 10px 25px rgba(255, 71, 126, 0.25);
+      transition: transform 0.2s ease;
+    }
+
+    .button:hover {
+      transform: translateY(-3px);
+    }
+
+    /* SECTIONS */
+    section {
+      padding: 90px 20px;
+    }
+
+    .section-container {
+      max-width: 1100px;
+      margin: auto;
+      text-align: center;
+    }
+
+    .section-title {
+      font-size: 42px;
+      margin-bottom: 18px;
+      color: #172033;
+    }
+
+    .section-text {
+      max-width: 750px;
+      margin: auto;
+      color: #64748b;
+      font-size: 18px;
+    }
+
+    /* MISSION */
+    .mission {
+      background: white;
+    }
+
+    /* CARDS */
+    .cards {
+      margin-top: 50px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 22px;
+    }
+
+    .card {
+      background: white;
+      padding: 35px 22px;
+      border-radius: 22px;
+
+      box-shadow: 0 10px 35px rgba(30, 50, 90, 0.08);
+
+      transition: transform 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-7px);
+    }
+
+    .icon {
+      width: 65px;
+      height: 65px;
+      margin: 0 auto 20px;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      border-radius: 50%;
+      font-size: 30px;
+    }
+
+    .pink {
+      background: #ffe1ec;
+    }
+
+    .orange {
+      background: #ffecd9;
+    }
+
+    .green {
+      background: #dcf8e9;
+    }
+
+    .blue {
+      background: #dfeeff;
+    }
+
+    .card h3 {
+      margin-bottom: 12px;
+      font-size: 21px;
+    }
+
+    .card p {
+      color: #68758a;
+      font-size: 15px;
+    }
+
+    /* COMMUNITY BANNER */
+    .banner {
+      margin-top: 70px;
+      padding: 55px 25px;
+      border-radius: 30px;
+
+      background:
+        linear-gradient(
+          135deg,
+          #fff0f5,
+          #fff8df,
+          #eaf8ff
+        );
+    }
+
+    .banner h2 {
+      font-size: 38px;
+      margin-bottom: 15px;
+    }
+
+    .banner p {
+      color: #5e6b80;
+      font-size: 18px;
+    }
+
+    /* FOOTER */
+    footer {
+      background: #101a35;
+      color: #aeb8cc;
+      text-align: center;
+      padding: 35px 20px;
+    }
+
+    footer .footer-logo {
+      font-size: 26px;
+      font-weight: 800;
+      margin-bottom: 10px;
+
+      background: linear-gradient(
+        90deg,
+        #ff4f81,
+        #ffb347,
+        #6ee7b7,
+        #60a5fa
+      );
+
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    footer small {
+      display: block;
+      max-width: 700px;
+      margin: 15px auto 0;
+      line-height: 1.7;
+    }
+
+    /* MOBILE */
+    @media (max-width: 800px) {
+
+      header {
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      nav a {
+        margin: 0 8px;
+        font-size: 13px;
+      }
+
+      .cards {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .hero {
+        min-height: 560px;
+      }
+    }
+
+    @media (max-width: 520px) {
+
+      .cards {
+        grid-template-columns: 1fr;
+      }
+
+      .section-title {
+        font-size: 34px;
+      }
+
+      .hero h1 {
+        font-size: 46px;
+      }
+
+      .hero p {
+        font-size: 17px;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-    <header>
-        <h1>LivePulse</h1>
-        <p>Welcome to the official
+  <!-- HEADER -->
+  <header>
+
+    <div class="logo">
+      LivePulse
+    </div>
+
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#mission">Our Mission</a>
+      <a href="#goals">Goals</a>
+    </nav>
+
+  </header>
+
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+
+    <div class="hero-content">
+
+      <div class="eyebrow">
+        REAL SUPPORT. BRIGHTER TOMORROWS.
+      </div>
+
+      <h1>
+        Because Every Child Deserves a Chance
+      </h1>
+
+      <p>
+        LivePulse is being developed as a community-driven project
+        with a simple mission: to help create meaningful support
+        for children living with special and serious illnesses.
+      </p>
+
+      <a class="button" href="#mission">
+        Discover Our Mission
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <!-- MISSION -->
+  <section class="mission" id="mission">
+
+    <div class="section-container">
+
+      <h2 class="section-title">
+        Turning Compassion into Real Impact
+      </h2>
+
+      <p class="section-text">
+        Our goal is to build a transparent community that connects
+        technology, generosity, and real-world support. As LivePulse
+        develops, we aim to create meaningful charitable opportunities
+        focused on children and their families.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- GOALS -->
+  <section id="goals">
+
+    <div class="section-container">
+
+      <h2 class="section-title">
+        How We Aim to Help
+      </h2>
+
+      <p class="section-text">
+        Every part of the project is designed around one simple idea:
+        helping create a brighter future for children who need support.
+      </p>
+
+
+      <div class="cards">
+
+        <!-- CARD 1 -->
+        <div class="card">
+
+          <div class="icon pink">
+            ❤️
+          </div>
+
+          <h3>
+            Medical Care
+          </h3>
+
+          <p>
+            Supporting efforts that can help children access
+            important medical treatment and care.
+          </p>
+
+        </div>
+
+
+        <!-- CARD 2 -->
+        <div class="card">
+
+          <div class="icon orange">
+            ☀️
+          </div>
+
+          <h3>
+            Quality of Life
+          </h3>
+
+          <p>
+            Helping create better and more positive experiences
+            for children during difficult periods.
+          </p>
+
+        </div>
+
+
+        <!-- CARD 3 -->
+        <div class="card">
+
+          <div class="icon green">
+            🤝
+          </div>
+
+          <h3>
+            Family Support
+          </h3>
+
+          <p>
+            Recognizing that families also need support while
+            caring for children with serious illnesses.
+          </p>
+
+        </div>
+
+
+        <!-- CARD 4 -->
+        <div class="card">
+
+          <div class="icon blue">
+            ✨
+          </div>
+
+          <h3>
+            Brighter Future
+          </h3>
+
+          <p>
+            Building a community focused on hope, transparency,
+            compassion, and long-term positive impact.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <!-- BANNER -->
+      <div class="banner">
+
+        <h2>
+          More Than a Token — A Community That Cares
+        </h2>
+
+        <p>
+          Small steps. Big hearts. A brighter future.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- FOOTER -->
+  <footer>
+
+    <div class="footer-logo">
+      LivePulse
+    </div>
+
+    <div>
+      Every Child Deserves a Chance
+    </div>
+
+    <small>
+      LivePulse is a project in development.
+      Charity partnerships, donation mechanisms,
+      and allocation details will be published
+      transparently as they are established.
+    </small>
+
+    <small>
+      © 2026 LivePulse. All rights reserved.
+    </small>
+
+  </footer>
+
+</body>
+</html>

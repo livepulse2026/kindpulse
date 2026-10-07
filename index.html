@@ -14,6 +14,9 @@
       padding: 0;
       font-family: 'Inter', sans-serif;
     }
+    html {
+      scroll-behavior: smooth;
+    }
     body {
       background-color: #0f172a;
       color: #f8fafc;
@@ -32,6 +35,11 @@
     header {
       padding: 20px 0;
       border-bottom: 1px solid #1e293b;
+      position: sticky;
+      top: 0;
+      background-color: rgba(15, 23, 42, 0.95);
+      backdrop-filter: blur(8px);
+      z-index: 100;
     }
     nav {
       display: flex;
@@ -104,11 +112,21 @@
     .btn-secondary:hover {
       background-color: rgba(153, 69, 255, 0.1);
     }
-    /* Features */
+    /* Section Shared */
+    .section-title {
+      text-align: center;
+      font-size: 2.2rem;
+      margin-bottom: 40px;
+      color: #ffffff;
+    }
+    .info-section {
+      padding: 70px 0;
+      border-top: 1px solid #1e293b;
+    }
+    /* Features Grid */
     .features {
-      padding: 60px 0;
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 25px;
     }
     .card {
@@ -126,16 +144,64 @@
       color: #94a3b8;
       font-size: 0.95rem;
     }
-    /* Tokenomics & Info */
-    .section-title {
-      text-align: center;
-      font-size: 2rem;
-      margin-bottom: 40px;
-      color: #ffffff;
+    /* Tokenomics Table */
+    .tokenomics-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+      background: #1e293b;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid #334155;
     }
-    .info-section {
-      padding: 60px 0;
-      border-top: 1px solid #1e293b;
+    .tokenomics-table th, .tokenomics-table td {
+      padding: 16px 20px;
+      text-align: left;
+    }
+    .tokenomics-table th {
+      background-color: #0f172a;
+      color: #14f195;
+      font-weight: 600;
+    }
+    .tokenomics-table tr:not(:last-child) {
+      border-bottom: 1px solid #334155;
+    }
+    /* Whitepaper Container */
+    .whitepaper-content {
+      background-color: #1e293b;
+      border: 1px solid #334155;
+      border-radius: 12px;
+      padding: 40px;
+      color: #cbd5e1;
+    }
+    .whitepaper-content h3 {
+      color: #14f195;
+      font-size: 1.4rem;
+      margin: 25px 0 10px 0;
+    }
+    .whitepaper-content h3:first-child {
+      margin-top: 0;
+    }
+    .whitepaper-content p {
+      margin-bottom: 15px;
+      font-size: 1rem;
+    }
+    .whitepaper-content ul {
+      margin-left: 20px;
+      margin-bottom: 20px;
+    }
+    .whitepaper-content li {
+      margin-bottom: 8px;
+    }
+    .charter-box {
+      background-color: #0f172a;
+      border-left: 4px solid #9945ff;
+      padding: 20px;
+      border-radius: 6px;
+      margin-top: 20px;
+      font-family: monospace;
+      font-size: 0.95rem;
+      color: #f1f5f9;
     }
     /* Footer */
     footer {
@@ -148,6 +214,8 @@
     @media (max-width: 768px) {
       .hero h1 { font-size: 2.2rem; }
       .nav-links { display: none; }
+      .whitepaper-content { padding: 20px; }
+      .tokenomics-table { display: block; overflow-x: auto; }
     }
   </style>
 </head>
@@ -162,13 +230,14 @@
           <li><a href="#about">About</a></li>
           <li><a href="#features">Features</a></li>
           <li><a href="#tokenomics">Tokenomics</a></li>
+          <li><a href="#whitepaper">Whitepaper</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
   <!-- Hero Section -->
-  <section class="hero">
+  <section class="hero" id="about">
     <div class="container">
       <h1>KindPulse <span>($KPUN)</span></h1>
       <h2>The Heartbeat of Decentralized Giving</h2>
@@ -177,26 +246,29 @@
         <strong>KindPulse</strong> leverages Solana’s high-speed network to ensure 100% verifiable, frictionless, and direct impact for charitable causes worldwide.
       </p>
       <div class="cta-buttons">
-        <a href="#about" class="btn btn-primary">Join the Movement</a>
-        <a href="#tokenomics" class="btn btn-secondary">Learn More</a>
+        <a href="#whitepaper" class="btn btn-primary">Read Whitepaper</a>
+        <a href="#tokenomics" class="btn btn-secondary">View Tokenomics</a>
       </div>
     </div>
   </section>
 
   <!-- Features Section -->
-  <section id="features" class="container">
-    <div class="features">
-      <div class="card">
-        <h3>Transparent Giving</h3>
-        <p>Every donation is recorded on-chain with full transparency, eliminating traditional overhead and intermediaries.</p>
-      </div>
-      <div class="card">
-        <h3>Powered by Solana</h3>
-        <p>Ultra-fast transactions and near-zero gas fees ensure maximum value reaches beneficiaries directly.</p>
-      </div>
-      <div class="card">
-        <h3>Community Driven</h3>
-        <p>Decentralized governance empowers $KPUN holders to vote on key initiatives and philanthropic grant distributions.</p>
+  <section id="features" class="info-section">
+    <div class="container">
+      <h2 class="section-title">Core Protocol Features</h2>
+      <div class="features">
+        <div class="card">
+          <h3>Transparent Giving</h3>
+          <p>Every donation is recorded on-chain with full transparency, eliminating traditional overhead and intermediaries.</p>
+        </div>
+        <div class="card">
+          <h3>Powered by Solana</h3>
+          <p>Ultra-fast sub-second transactions and near-zero gas fees ensure maximum value reaches beneficiaries directly.</p>
+        </div>
+        <div class="card">
+          <h3>Community Driven</h3>
+          <p>Decentralized governance empowers $KPUN holders to vote on key philanthropic grant distributions and initiatives.</p>
+        </div>
       </div>
     </div>
   </section>
@@ -204,16 +276,94 @@
   <!-- Tokenomics Section -->
   <section id="tokenomics" class="info-section">
     <div class="container">
-      <h2 class="section-title">Tokenomics & Governance</h2>
-      <div class="features">
-        <div class="card">
-          <h3>Token Standard</h3>
-          <p>Built using Solana Token-2022 program for enhanced compliance and ecosystem security.</p>
+      <h2 class="section-title">Tokenomics Architecture</h2>
+      <p style="text-align: center; color: #94a3b8; margin-bottom: 30px;">
+        Fixed Total Supply: <strong>1,000,000,000 $KPUN</strong> | Standard: <strong>Solana Token-2022</strong>
+      </p>
+      
+      <table class="tokenomics-table">
+        <thead>
+          <tr>
+            <th>Allocation Category</th>
+            <th>Share (%)</th>
+            <th>Token Amount</th>
+            <th>Vesting & Release Schedule</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Charity Vault</strong></td>
+            <td>40%</td>
+            <td>400,000,000</td>
+            <td>Squads Multi-Sig Lock. Released via community grant votes.</td>
+          </tr>
+          <tr>
+            <td><strong>Public Liquidity</strong></td>
+            <td>30%</td>
+            <td>300,000,000</td>
+            <td>100% unlocked at TGE for immediate DEX depth (Raydium).</td>
+          </tr>
+          <tr>
+            <td><strong>Airdrop & Growth</strong></td>
+            <td>10%</td>
+            <td>100,000,000</td>
+            <td>Task-based & Anti-Dump framework (25% TGE + 3-mo linear).</td>
+          </tr>
+          <tr>
+            <td><strong>Development Vault</strong></td>
+            <td>10%</td>
+            <td>100,000,000</td>
+            <td>6-month linear cliff, followed by 5% monthly unlock.</td>
+          </tr>
+          <tr>
+            <td><strong>Team & Founders</strong></td>
+            <td>10%</td>
+            <td>100,000,000</td>
+            <td>6-month hard lock (Vested), followed by 5% monthly unlock.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- Whitepaper Section -->
+  <section id="whitepaper" class="info-section">
+    <div class="container">
+      <h2 class="section-title">Executive Whitepaper</h2>
+      <div class="whitepaper-content">
+        
+        <h3>1. Vision & Problem Statement</h3>
+        <p>
+          Traditional philanthropic institutions are frequently compromised by excessive administrative overhead, lack of financial clarity, and geo-restricted capital flows. <strong>KindPulse ($KPUN)</strong> addresses these structural flaws by merging high-throughput blockchain infrastructure with a verified on-chain donation loop.
+        </p>
+
+        <h3>2. Custody & Multi-Sig Governance</h3>
+        <p>
+          To eliminate single-point-of-failure risks, all reserve vaults operate strictly under a <strong>Squads v4 Multi-Signature Contract</strong> on Solana.
+        </p>
+        <ul>
+          <li><strong>Consensus Threshold:</strong> Requires 2-of-3 multi-sig authentication before any transfer or program alteration can execute.</li>
+          <li><strong>Auditable Operations:</strong> All proposed payouts and signer actions are broadcast publicly prior to execution.</li>
+        </ul>
+
+        <h3>3. Anti-Dump Airdrop Framework</h3>
+        <p>
+          To prevent bot exploitation and market dumping, the 10% Airdrop allocation enforces a multi-tiered <strong>Proof-of-Humanity</strong> distribution strategy:
+        </p>
+        <ul>
+          <li><strong>Sybil-Proof Tasks:</strong> Engagement with verified community initiatives and on-chain verification.</li>
+          <li><strong>Proof-of-Donation Multiplier:</strong> Dynamic bonuses for early supporters of micro-philanthropy campaigns.</li>
+          <li><strong>Vesting Schedule:</strong> 25% unlocked at TGE, 75% linearly over 3 months.</li>
+        </ul>
+
+        <h3>4. Ecosystem Charter</h3>
+        <div class="charter-box">
+          <strong>KINDPULSE ($KPUN) PROTOCOL CHARTER</strong><br><br>
+          1. BINDING PRINCIPLES: All Charity, Team, and Dev reserves MUST reside inside the designated Squads v4 Multi-Sig Vault.<br>
+          2. CHARITY INTEGRITY: The 40% Charity Reserve is strictly non-custodial and governed by on-chain community proposals.<br>
+          3. TRANSPARENCY: All multi-sig addresses, liquidity locks, and burn receipts will remain permanently public.
         </div>
-        <div class="card">
-          <h3>Multi-Sig Treasury</h3>
-          <p>Protected by Squads v4 Multi-Sig protocol, ensuring all fund movements require multi-party consensus.</p>
-        </div>
+
       </div>
     </div>
   </section>

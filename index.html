@@ -1,21 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>KindPulse ($KPUN) - The Heartbeat of Decentralized Giving</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>KindPulse ($KPUN) — Compassion Powered by Blockchain</title>
+
+  <meta
+    name="description"
+    content="KindPulse ($KPUN) is a charitable Solana Token-2022 project designed to support children facing serious and special illnesses."
+  />
+
   <style>
     :root {
-      --bg-dark: #0a0b10;
-      --card-bg: rgba(255, 255, 255, 0.03);
-      --card-border: rgba(255, 255, 255, 0.08);
-      --solana-purple: #9945ff;
-      --solana-green: #14f195;
-      --text-main: #f3f4f6;
-      --text-muted: #9ca3af;
+      --bg: #061714;
+      --bg-soft: #091e1a;
+      --card: #0d2823;
+      --card-2: #10332d;
+      --mint: #54e6a5;
+      --mint-light: #91f5c7;
+      --white: #f4fffb;
+      --text: #d5e8e1;
+      --muted: #8faea4;
+      --border: rgba(145, 245, 199, 0.14);
+      --danger: #ff9d9d;
+      --max: 1120px;
     }
 
     * {
@@ -24,534 +33,670 @@
       padding: 0;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-      background-color: var(--bg-dark);
-      color: var(--text-main);
-      line-height: 1.6;
-      overflow-x: hidden;
+      font-family:
+        Inter,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        Arial,
+        sans-serif;
+      background:
+        radial-gradient(circle at 20% 0%, rgba(84, 230, 165, 0.08), transparent 30%),
+        radial-gradient(circle at 90% 10%, rgba(84, 230, 165, 0.05), transparent 25%),
+        var(--bg);
+      color: var(--text);
+      line-height: 1.7;
     }
 
-    /* Container */
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
     .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 24px;
+      width: min(92%, var(--max));
+      margin: auto;
     }
 
-    /* Header & Nav */
-    header {
-      padding: 24px 0;
-      border-bottom: 1px solid var(--card-border);
-      backdrop-filter: blur(10px);
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      background-color: rgba(10, 11, 16, 0.8);
-    }
+    /* NAV */
 
     nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      backdrop-filter: blur(14px);
+      background: rgba(6, 23, 20, 0.86);
+      border-bottom: 1px solid var(--border);
     }
 
-    .logo {
-      font-size: 1.5rem;
-      font-weight: 700;
-      background: linear-gradient(135deg, var(--solana-purple), var(--solana-green));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+    .nav-inner {
+      min-height: 70px;
       display: flex;
       align-items: center;
-      gap: 8px;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--mint-light);
+      letter-spacing: 0.3px;
+    }
+
+    .brand span {
+      color: var(--white);
     }
 
     .nav-links {
       display: flex;
-      gap: 24px;
-      list-style: none;
-    }
-
-    .nav-links a {
-      color: var(--text-muted);
-      text-decoration: none;
-      font-size: 0.95rem;
-      transition: color 0.2s;
+      flex-wrap: wrap;
+      gap: 22px;
+      font-size: 0.92rem;
+      color: var(--muted);
     }
 
     .nav-links a:hover {
-      color: var(--text-main);
+      color: var(--mint-light);
     }
 
-    /* Social Icons in Header */
-    .header-socials {
-      display: flex;
-      gap: 16px;
-      align-items: center;
-    }
+    /* HERO */
 
-    .social-icn {
-      color: var(--text-muted);
-      text-decoration: none;
-      transition: color 0.2s, transform 0.2s;
-      display: flex;
-      align-items: center;
-    }
-
-    .social-icn:hover {
-      color: var(--solana-green);
-      transform: translateY(-2px);
-    }
-
-    .social-icn svg {
-      width: 20px;
-      height: 20px;
-      fill: currentColor;
-    }
-
-    /* Hero Section */
     .hero {
-      padding: 100px 0 60px;
+      padding: 105px 0 90px;
       text-align: center;
-      position: relative;
     }
 
-    .hero-title {
-      font-size: 3.5rem;
-      font-weight: 700;
-      line-height: 1.15;
+    .badge {
+      display: inline-block;
+      padding: 7px 14px;
+      border: 1px solid rgba(84, 230, 165, 0.25);
+      border-radius: 999px;
+      color: var(--mint-light);
+      background: rgba(84, 230, 165, 0.06);
+      font-size: 0.82rem;
       margin-bottom: 24px;
     }
 
-    .hero-title span {
-      background: linear-gradient(135deg, var(--solana-purple), var(--solana-green));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+    .hero h1 {
+      font-size: clamp(3rem, 8vw, 6rem);
+      line-height: 1;
+      color: var(--mint);
+      letter-spacing: -3px;
+      margin-bottom: 22px;
     }
 
-    .hero-subtitle {
-      font-size: 1.25rem;
-      color: var(--text-muted);
-      max-width: 680px;
-      margin: 0 auto 36px;
+    .hero h2 {
+      font-size: clamp(1.35rem, 3vw, 2rem);
+      color: var(--white);
+      font-weight: 600;
+      margin-bottom: 18px;
     }
 
-    .cta-group {
+    .hero p {
+      max-width: 760px;
+      margin: auto;
+      color: var(--muted);
+      font-size: 1.05rem;
+    }
+
+    .hero-buttons {
+      margin-top: 32px;
       display: flex;
-      gap: 16px;
       justify-content: center;
-      align-items: center;
       flex-wrap: wrap;
+      gap: 14px;
     }
 
-    .btn {
-      padding: 14px 28px;
-      border-radius: 12px;
-      font-weight: 600;
-      text-decoration: none;
-      transition: all 0.2s;
-      font-size: 1rem;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
+    .button {
+      display: inline-block;
+      padding: 12px 22px;
+      border-radius: 10px;
+      border: 1px solid rgba(84, 230, 165, 0.35);
+      color: var(--mint-light);
+      background: rgba(84, 230, 165, 0.07);
+      transition: 0.2s ease;
     }
 
-    .btn-primary {
-      background: linear-gradient(135deg, var(--solana-purple), #7928ca);
-      color: #fff;
-      box-shadow: 0 4px 20px rgba(153, 69, 255, 0.3);
+    .button:hover {
+      background: rgba(84, 230, 165, 0.14);
+      transform: translateY(-1px);
     }
 
-    .btn-primary:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 24px rgba(153, 69, 255, 0.4);
+    .button.primary {
+      background: var(--mint);
+      color: #052018;
+      font-weight: 700;
     }
 
-    .btn-secondary {
-      background: var(--card-bg);
-      border: 1px solid var(--card-border);
-      color: var(--text-main);
+    .button.primary:hover {
+      background: var(--mint-light);
     }
 
-    .btn-secondary:hover {
-      background: rgba(255, 255, 255, 0.08);
-      border-color: rgba(255, 255, 255, 0.2);
-    }
+    /* SECTIONS */
 
-    /* Contract Address Box */
-    .ca-box {
-      margin-top: 36px;
-      display: inline-flex;
-      align-items: center;
-      gap: 12px;
-      background: var(--card-bg);
-      border: 1px solid var(--card-border);
-      padding: 10px 18px;
-      border-radius: 30px;
-      font-size: 0.88rem;
-      color: var(--text-muted);
-      backdrop-filter: blur(8px);
-    }
-
-    .ca-title {
-      color: var(--solana-green);
-      font-weight: 600;
-    }
-
-    .ca-value {
-      font-family: monospace;
-      color: var(--text-main);
-    }
-
-    .copy-btn {
-      background: none;
-      border: none;
-      color: var(--text-muted);
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      transition: color 0.2s;
-    }
-
-    .copy-btn:hover {
-      color: var(--solana-green);
-    }
-
-    /* Section Styling */
     section {
-      padding: 80px 0;
+      padding: 82px 0;
+      scroll-margin-top: 80px;
     }
 
     .section-title {
-      font-size: 2.2rem;
+      margin-bottom: 38px;
+    }
+
+    .section-title .eyebrow {
+      color: var(--mint);
+      font-size: 0.78rem;
       font-weight: 700;
-      margin-bottom: 16px;
-      text-align: center;
-    }
-
-    .section-desc {
-      text-align: center;
-      color: var(--text-muted);
-      max-width: 600px;
-      margin: 0 auto 48px;
-    }
-
-    /* Feature Grid */
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 24px;
-    }
-
-    .card {
-      background: var(--card-bg);
-      border: 1px solid var(--card-border);
-      padding: 32px;
-      border-radius: 16px;
-      transition: transform 0.2s, border-color 0.2s;
-    }
-
-    .card:hover {
-      transform: translateY(-4px);
-      border-color: rgba(153, 69, 255, 0.4);
-    }
-
-    .card-icon {
-      font-size: 2rem;
-      margin-bottom: 16px;
-    }
-
-    .card-title {
-      font-size: 1.25rem;
-      font-weight: 600;
-      margin-bottom: 12px;
-    }
-
-    .card-text {
-      color: var(--text-muted);
-      font-size: 0.95rem;
-    }
-
-    /* Tokenomics Table */
-    .tokenomics-wrapper {
-      background: var(--card-bg);
-      border: 1px solid var(--card-border);
-      border-radius: 16px;
-      padding: 32px;
-      overflow-x: auto;
-    }
-
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      text-align: left;
-    }
-
-    th, td {
-      padding: 16px;
-      border-bottom: 1px solid var(--card-border);
-    }
-
-    th {
-      color: var(--text-muted);
-      font-weight: 500;
-      font-size: 0.9rem;
+      letter-spacing: 2px;
       text-transform: uppercase;
-      letter-spacing: 0.05em;
-    }
-
-    td {
-      font-size: 1rem;
-    }
-
-    tr:last-child td {
-      border-bottom: none;
-    }
-
-    /* Whitepaper Article Card */
-    .wp-card {
-      background: var(--card-bg);
-      border: 1px solid var(--card-border);
-      border-radius: 16px;
-      padding: 40px;
-    }
-
-    .wp-card h3 {
-      font-size: 1.4rem;
-      color: var(--solana-green);
-      margin: 28px 0 12px;
-    }
-
-    .wp-card h3:first-child {
-      margin-top: 0;
-    }
-
-    .wp-card p {
-      color: var(--text-muted);
-      margin-bottom: 16px;
-      font-size: 1rem;
-    }
-
-    .wp-card ul {
-      margin-left: 20px;
-      color: var(--text-muted);
-      margin-bottom: 16px;
-    }
-
-    .wp-card li {
       margin-bottom: 8px;
     }
 
-    /* Footer */
-    footer {
-      border-top: 1px solid var(--card-border);
-      padding: 40px 0;
+    .section-title h2 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      color: var(--white);
+      margin-bottom: 10px;
+    }
+
+    .section-title p {
+      color: var(--muted);
+      max-width: 760px;
+    }
+
+    /* CARDS */
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+
+    .card {
+      background:
+        linear-gradient(
+          145deg,
+          rgba(84, 230, 165, 0.045),
+          rgba(84, 230, 165, 0.015)
+        ),
+        var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 25px;
+    }
+
+    .card h3 {
+      color: var(--white);
+      margin-bottom: 9px;
+      font-size: 1.12rem;
+    }
+
+    .card p {
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
+
+    .number {
+      color: var(--mint);
+      font-size: 0.78rem;
+      font-weight: 800;
+      margin-bottom: 10px;
+      letter-spacing: 1px;
+    }
+
+    /* MISSION */
+
+    .mission-box {
+      padding: 38px;
+      border-radius: 18px;
+      border: 1px solid rgba(84, 230, 165, 0.2);
+      background:
+        linear-gradient(
+          135deg,
+          rgba(84, 230, 165, 0.08),
+          rgba(84, 230, 165, 0.025)
+        ),
+        var(--card);
+    }
+
+    .mission-box h3 {
+      color: var(--mint-light);
+      font-size: 1.45rem;
+      margin-bottom: 14px;
+    }
+
+    .mission-box p {
+      color: var(--text);
+      max-width: 900px;
+    }
+
+    /* TOKEN */
+
+    .token-table {
+      width: 100%;
+      border-collapse: collapse;
+      overflow: hidden;
+      border-radius: 14px;
+      background: var(--card);
+      border: 1px solid var(--border);
+    }
+
+    .token-table th,
+    .token-table td {
+      padding: 15px 18px;
+      border-bottom: 1px solid var(--border);
+      text-align: left;
+    }
+
+    .token-table th {
+      width: 35%;
+      color: var(--muted);
+      font-weight: 500;
+    }
+
+    .token-table td {
+      color: var(--white);
+      font-weight: 600;
+    }
+
+    .token-table tr:last-child th,
+    .token-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    /* STATS */
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 15px;
+      margin-bottom: 30px;
+    }
+
+    .stat {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 15px;
+      padding: 22px;
       text-align: center;
-      color: var(--text-muted);
+    }
+
+    .stat-value {
+      display: block;
+      color: var(--mint);
+      font-size: 1.45rem;
+      font-weight: 800;
+      margin-bottom: 4px;
+    }
+
+    .stat-label {
+      color: var(--muted);
+      font-size: 0.82rem;
+    }
+
+    /* SCHEDULE */
+
+    .schedule-wrap {
+      overflow-x: auto;
+      border-radius: 16px;
+      border: 1px solid var(--border);
+    }
+
+    .schedule {
+      width: 100%;
+      min-width: 720px;
+      border-collapse: collapse;
+      background: var(--card);
+    }
+
+    .schedule th,
+    .schedule td {
+      padding: 14px 16px;
+      border-bottom: 1px solid var(--border);
+      text-align: left;
+    }
+
+    .schedule th {
+      color: var(--mint-light);
+      background: var(--card-2);
+      font-size: 0.85rem;
+    }
+
+    .schedule td {
+      color: var(--text);
       font-size: 0.9rem;
     }
 
-    .footer-content {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 16px;
+    .schedule tr:last-child td {
+      border-bottom: none;
     }
 
-    .footer-links {
-      display: flex;
-      gap: 20px;
+    .release {
+      color: var(--mint-light);
+      font-weight: 700;
     }
 
-    /* Mobile adjustments */
-    @media (max-width: 768px) {
-      .hero-title {
-        font-size: 2.5rem;
+    .burn {
+      color: #ffb3b3;
+      font-weight: 700;
+    }
+
+    .neutral {
+      color: var(--muted);
+    }
+
+    .note {
+      margin-top: 18px;
+      padding: 18px;
+      border-left: 3px solid var(--mint);
+      background: rgba(84, 230, 165, 0.045);
+      color: var(--muted);
+      border-radius: 8px;
+      font-size: 0.9rem;
+    }
+
+    /* TRANSPARENCY */
+
+    .transparency-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+
+    .transparency-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 25px;
+    }
+
+    .transparency-card h3 {
+      color: var(--white);
+      margin-bottom: 8px;
+    }
+
+    .transparency-card p {
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    /* ROADMAP */
+
+    .roadmap {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 15px;
+    }
+
+    .phase {
+      position: relative;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 15px;
+      padding: 23px;
+    }
+
+    .phase-number {
+      color: var(--mint);
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 1px;
+      margin-bottom: 10px;
+    }
+
+    .phase h3 {
+      color: var(--white);
+      margin-bottom: 9px;
+    }
+
+    .phase p {
+      color: var(--muted);
+      font-size: 0.88rem;
+    }
+
+    /* NOTICE */
+
+    .notice {
+      border: 1px solid rgba(255, 157, 157, 0.18);
+      background: rgba(255, 157, 157, 0.035);
+      border-radius: 15px;
+      padding: 24px;
+    }
+
+    .notice h3 {
+      color: var(--danger);
+      margin-bottom: 10px;
+    }
+
+    .notice p {
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    /* FOOTER */
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 35px 0;
+      color: var(--muted);
+      text-align: center;
+      font-size: 0.85rem;
+    }
+
+    footer strong {
+      color: var(--mint-light);
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 900px) {
+      .grid,
+      .roadmap {
+        grid-template-columns: repeat(2, 1fr);
       }
+
+      .stats {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 650px) {
+      .nav-inner {
+        flex-direction: column;
+        justify-content: center;
+        padding: 15px 0;
+      }
+
       .nav-links {
-        display: none;
+        justify-content: center;
+        gap: 13px;
       }
-      .wp-card {
-        padding: 24px;
+
+      .hero {
+        padding: 75px 0 65px;
+      }
+
+      section {
+        padding: 60px 0;
+      }
+
+      .grid,
+      .grid-2,
+      .transparency-grid,
+      .roadmap {
+        grid-template-columns: 1fr;
+      }
+
+      .stats {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .mission-box {
+        padding: 25px;
       }
     }
   </style>
 </head>
+
 <body>
 
-  <!-- Header -->
-  <header>
-    <div class="container">
-      <nav>
-        <div class="logo">
-          ⚡ KindPulse
-        </div>
-        <ul class="nav-links">
-          <li><a href="#features">Features</a></li>
-          <li><a href="#tokenomics">Tokenomics</a></li>
-          <li><a href="#whitepaper">Whitepaper</a></li>
-        </ul>
-        <div class="header-socials">
-          <a href="https://x.com" target="_blank" rel="noopener noreferrer" class="social-icn" title="X (Twitter)">
-            <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-          </a>
-          <a href="https://t.me" target="_blank" rel="noopener noreferrer" class="social-icn" title="Telegram">
-            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 0 0-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.74-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/></svg>
-          </a>
-        </div>
-      </nav>
-    </div>
-  </header>
+  <!-- NAVIGATION -->
 
-  <!-- Hero Section -->
-  <main>
-    <section class="hero">
+  <nav>
+    <div class="container nav-inner">
+
+      <a href="#top" class="brand">
+        Kind<span>Pulse</span>
+      </a>
+
+      <div class="nav-links">
+        <a href="#mission">Mission</a>
+        <a href="#token">Token</a>
+        <a href="#tokenomics">Tokenomics</a>
+        <a href="#schedule">Schedule</a>
+        <a href="#transparency">Transparency</a>
+        <a href="#roadmap">Roadmap</a>
+      </div>
+
+    </div>
+  </nav>
+
+
+  <main id="top">
+
+    <!-- HERO -->
+
+    <header class="hero">
       <div class="container">
-        <h1 class="hero-title">
-          The Heartbeat of <br><span>Decentralized Giving</span>
-        </h1>
-        <p class="hero-subtitle">
-          KindPulse ($KPUN) leverages Solana's high-speed blockchain to create a transparent, community-governed ecosystem for global micro-charity and social impact.
+
+        <div class="badge">
+          $KPUN · Solana · Token-2022
+        </div>
+
+        <h1>KindPulse</h1>
+
+        <h2>
+          Compassion for children. Transparency through blockchain.
+        </h2>
+
+        <p>
+          KindPulse is a charitable blockchain project designed to support
+          children facing serious and special illnesses while using blockchain
+          technology to make project activity and charitable resources easier
+          to verify.
         </p>
-        <div class="cta-group">
-          <a href="#whitepaper" class="btn btn-primary">
-            Read Whitepaper
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+
+        <div class="hero-buttons">
+          <a href="#mission" class="button primary">
+            Our Mission
           </a>
-          <a href="#tokenomics" class="btn btn-secondary">View Tokenomics</a>
+
+          <a href="#tokenomics" class="button">
+            Tokenomics
+          </a>
         </div>
 
-        <!-- Contract Address Box (CA) -->
-        <div class="ca-box">
-          <span class="ca-title">CA:</span>
-          <span class="ca-value" id="ca-text">Squads v4 Deployment Pending (Mainnet)</span>
-          <button class="copy-btn" onclick="copyCA()" title="Copy Contract Address">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          </button>
-        </div>
       </div>
-    </section>
+    </header>
 
-    <!-- Features Section -->
-    <section id="features">
+
+    <!-- MISSION -->
+
+    <section id="mission">
+
       <div class="container">
-        <h2 class="section-title">Core Pillars</h2>
-        <p class="section-desc">Designed for maximum accountability, sustainability, and community trust.</p>
-        
+
+        <div class="section-title">
+          <div class="eyebrow">01 · Mission</div>
+
+          <h2>Helping children is the purpose.</h2>
+
+          <p>
+            Blockchain is the tool. The charitable mission comes first.
+          </p>
+        </div>
+
+        <div class="mission-box">
+
+          <h3>
+            Supporting Children Facing Serious Illness
+          </h3>
+
+          <p>
+            KindPulse is being developed with a clear charitable mission:
+            to help support children affected by serious and special illnesses.
+            The project aims to create a transparent framework through which
+            community participation and project resources can contribute to
+            meaningful charitable causes.
+          </p>
+
+          <br />
+
+          <p>
+            Initial and future charitable recipients may include established
+            humanitarian organizations, hospitals, foundations, and other
+            verified organizations serving children in need.
+          </p>
+
+        </div>
+
+        <br />
+
         <div class="grid">
+
           <div class="card">
-            <div class="card-icon">🔮</div>
-            <h3 class="card-title">Transparent Allocations</h3>
-            <p class="card-text">Every charity disbursement is recorded immutably on-chain. Track funds directly from liquidity pools to verified impact initiatives.</p>
+            <div class="number">01</div>
+            <h3>Community</h3>
+            <p>
+              A community can participate in the KindPulse ecosystem through
+              $KPUN and support the project's charitable mission.
+            </p>
           </div>
+
           <div class="card">
-            <div class="card-icon">⚡</div>
-            <h3 class="card-title">Powered by Solana</h3>
-            <p class="card-text">Near-zero transaction costs and sub-second finality ensure that maximum value goes directly toward global initiatives rather than gas fees.</p>
+            <div class="number">02</div>
+            <h3>Transparency</h3>
+            <p>
+              Blockchain transactions can provide public and independently
+              verifiable records of on-chain movements and project activity.
+            </p>
           </div>
+
           <div class="card">
-            <div class="card-icon">🛡️</div>
-            <h3 class="card-title">Multi-Sig Vault Governance</h3>
-            <p class="card-text">Protected by Squads v4 multi-signature consensus (2-of-3 threshold) to eliminate single points of failure and safeguard community treasury.</p>
+            <div class="number">03</div>
+            <h3>Charity</h3>
+            <p>
+              Resources designated for charitable purposes are intended to
+              support verified organizations and causes serving children.
+            </p>
           </div>
+
         </div>
+
       </div>
+
     </section>
 
-    <!-- Tokenomics Section -->
-    <section id="tokenomics">
+
+    <!-- TOKEN -->
+
+    <section id="token">
+
       <div class="container">
-        <h2 class="section-title">Tokenomics & Vesting</h2>
-        <p class="section-desc">A sustainable 10-12 year emission architecture built for long-term growth and stability.</p>
 
-        <div class="tokenomics-wrapper">
-          <table>
-            <thead>
-              <tr>
-                <th>Allocation Pool</th>
-                <th>Share (%)</th>
-                <th>Release Schedule & Lockup</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td><strong>Charity & Impact Treasury</strong></td>
-                <td>40%</td>
-                <td>10-12 Year linear unlock via Squads Multi-Sig Vault. Released in controlled yearly tranches based on verified proposals.</td>
-              </tr>
-              <tr>
-                <td><strong>Liquidity Pool (Raydium)</strong></td>
-                <td>25%</td>
-                <td>100% Locked upon initial DEX listing to ensure seamless trade execution and slippage protection.</td>
-              </tr>
-              <tr>
-                <td><strong>Community Airdrop & Governance</strong></td>
-                <td>15%</td>
-                <td>Anti-bot distribution model with Proof-of-Humanity filtering. Vested over 24 months to active community participants.</td>
-              </tr>
-              <tr>
-                <td><strong>Ecosystem Development</strong></td>
-                <td>10%</td>
-                <td>Locked for 12 months, followed by 36-month quarterly unlock for platform upgrades, audits, and infrastructure.</td>
-              </tr>
-              <tr>
-                <td><strong>Core Team & Contributors</strong></td>
-                <td>10%</td>
-                <td>Locked for 12 months, followed by 48-month linear vesting schedule to align long-term incentives.</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </section>
+        <div class="section-title">
+          <div class="eyebrow">02 · Token</div>
 
-    <!-- Whitepaper Section -->
-    <section id="whitepaper">
-      <div class="container">
-        <h2 class="section-title">Project Whitepaper</h2>
-        <p class="section-desc">Executive summary of the KindPulse protocol vision and operating principles.</p>
-
-        <div class="wp-card">
-          <h3>1. Abstract & Problem Statement</h3>
-          <p>Traditional charitable giving suffers from opacity, high administrative overhead, and geographical restrictions. Donors often lack visibility into how funds are deployed, while beneficiaries incur significant middleman costs.</p>
-          
-          <h3>2. The KindPulse Protocol Solution</h3>
-          <p>KindPulse introduces a decentralized micro-giving layer built on Solana. By combining automated smart contract disbursements with multi-signature vault security, KindPulse guarantees direct, verifiable impact tracking for every token distributed.</p>
-
-          <h3>3. Security & Treasury Management</h3>
-          <p>To eliminate centralized risks, all reserve funds (including the 40% Charity Treasury and 10% Ecosystem Development) are secured within a Squads v4 Multi-Sig Vault requiring a 2-of-3 signature threshold across independent keys.</p>
-
-          <h3>4. Governance Manifesto</h3>
-          <ul>
-            <li><strong>Proof-of-Humanity Governance:</strong> Airdrops and voting weighting utilize anti-sybil mechanisms.</li>
-            <li><strong>Deflationary Burn Mechanism:</strong> A portion of transactional fees is automatically routed toward token buyback and permanent burn events.</li>
-            <li><strong>10-12 Year Long-Term Vision:</strong> Controlled, sustainable releases prevent supply flooding and protect long-term ecosystem health.</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <!-- Footer -->
-  <footer>
-    <div class="container footer-content">
-      <div class="footer-links">
-        <a href="https://x.com" target="_blank" rel="noopener noreferrer" class="social-icn">X (Twitter)</a>
-        <a href="https://t.me" target="_blank" rel="noopener noreferrer" class="social-icn">Telegram</a>
-        <a href="#whitepaper" class="social-icn">Whitepaper</a>
-      </div>
-      <p>&copy; 2026 KindPulse ($KPUN). All rights reserved. Built on Solana.</p>
-    </div>
-  </footer>
-
-  <script>
-    function copyCA() {
-      const caText = document.getElementById('ca-text').innerText;
-      navigator.clipboard.writeText(caText).then(() => {
-        alert('Contract Address status copied to clipboard!');
-      });
-    }
-  </script>
-</body>
-</html>
+          <h2>

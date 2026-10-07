@@ -1,29 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>KindPulse ($KPUN) | Compassion for Children</title>
+  <title>KindPulse ($KPUN) — Compassion Powered by Blockchain</title>
 
   <meta
     name="description"
-    content="KindPulse is a Solana-based charitable project created to support children facing serious illnesses through transparency, responsibility and long-term community support."
-  >
+    content="KindPulse ($KPUN) is a charitable Solana Token-2022 project designed to support children facing serious and special illnesses."
+  />
 
   <style>
     :root {
       --bg: #061714;
-      --bg-soft: #0a211d;
+      --bg-soft: #091e1a;
       --card: #0d2823;
-      --card-hover: #12342e;
-      --green: #54e6a5;
-      --green-light: #91f5c7;
-      --white: #f4fff9;
-      --text: #d8eee5;
-      --muted: #91aaa1;
-      --border: rgba(145, 245, 199, 0.15);
-      --shadow: rgba(0, 0, 0, 0.30);
+      --card-2: #10332d;
+      --mint: #54e6a5;
+      --mint-light: #91f5c7;
+      --white: #f4fffb;
+      --text: #d5e8e1;
+      --muted: #8faea4;
+      --border: rgba(145, 245, 199, 0.14);
+      --danger: #ff9d9d;
+      --max: 1120px;
     }
 
     * {
@@ -37,18 +38,17 @@
     }
 
     body {
-      font-family: Arial, Helvetica, sans-serif;
+      font-family:
+        Inter,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        Arial,
+        sans-serif;
       background:
-        radial-gradient(
-          circle at top right,
-          rgba(84, 230, 165, 0.10),
-          transparent 30%
-        ),
-        radial-gradient(
-          circle at bottom left,
-          rgba(84, 230, 165, 0.07),
-          transparent 28%
-        ),
+        radial-gradient(circle at 20% 0%, rgba(84, 230, 165, 0.08), transparent 30%),
+        radial-gradient(circle at 90% 10%, rgba(84, 230, 165, 0.05), transparent 25%),
         var(--bg);
       color: var(--text);
       line-height: 1.7;
@@ -60,1327 +60,1279 @@
     }
 
     .container {
-      width: min(1120px, 92%);
+      width: min(92%, var(--max));
       margin: auto;
     }
 
-    /* =========================
-       NAVIGATION
-    ========================= */
+    /* NAV */
 
     nav {
       position: sticky;
       top: 0;
       z-index: 1000;
-      background: rgba(6, 23, 20, 0.90);
       backdrop-filter: blur(14px);
+      background: rgba(6, 23, 20, 0.86);
       border-bottom: 1px solid var(--border);
     }
 
     .nav-inner {
-      min-height: 72px;
+      min-height: 70px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 25px;
+      gap: 20px;
     }
 
-    .logo {
-      font-size: 1.4rem;
+    .brand {
+      font-size: 1.25rem;
       font-weight: 800;
-      letter-spacing: 0.5px;
-      color: var(--green);
-      white-space: nowrap;
+      color: var(--mint-light);
+      letter-spacing: 0.3px;
+    }
+
+    .brand span {
+      color: var(--white);
     }
 
     .nav-links {
       display: flex;
-      gap: 22px;
-      list-style: none;
       flex-wrap: wrap;
-    }
-
-    .nav-links a {
-      color: var(--muted);
+      gap: 22px;
       font-size: 0.92rem;
-      transition: 0.2s ease;
+      color: var(--muted);
     }
 
     .nav-links a:hover {
-      color: var(--green);
+      color: var(--mint-light);
     }
 
-    /* =========================
-       HERO
-    ========================= */
+    /* HERO */
 
     .hero {
-      padding: 115px 0 100px;
+      padding: 105px 0 90px;
       text-align: center;
     }
 
-    .eyebrow {
+    .badge {
       display: inline-block;
-      padding: 7px 16px;
-      border: 1px solid var(--border);
+      padding: 7px 14px;
+      border: 1px solid rgba(84, 230, 165, 0.25);
       border-radius: 999px;
-      color: var(--green-light);
+      color: var(--mint-light);
       background: rgba(84, 230, 165, 0.06);
-      font-size: 0.85rem;
-      margin-bottom: 25px;
+      font-size: 0.82rem;
+      margin-bottom: 24px;
     }
 
     .hero h1 {
-      font-size: clamp(3.2rem, 8vw, 6rem);
+      font-size: clamp(3rem, 8vw, 6rem);
       line-height: 1;
+      color: var(--mint);
       letter-spacing: -3px;
-      color: var(--white);
-      margin-bottom: 25px;
-    }
-
-    .hero h1 span {
-      color: var(--green);
+      margin-bottom: 22px;
     }
 
     .hero h2 {
-      font-size: clamp(1.2rem, 3vw, 1.8rem);
-      font-weight: 500;
-      color: var(--green-light);
-      margin-bottom: 25px;
-    }
-
-    .hero p {
-      max-width: 780px;
-      margin: auto;
-      color: var(--muted);
-      font-size: 1.06rem;
-    }
-
-    .buttons {
-      margin-top: 35px;
-      display: flex;
-      justify-content: center;
-      gap: 14px;
-      flex-wrap: wrap;
-    }
-
-    .button {
-      padding: 12px 24px;
-      border-radius: 10px;
-      border: 1px solid var(--border);
-      transition: 0.2s ease;
-      font-weight: 700;
-    }
-
-    .button.primary {
-      background: var(--green);
-      color: #052019;
-    }
-
-    .button.secondary {
-      background: transparent;
-      color: var(--green-light);
-    }
-
-    .button:hover {
-      transform: translateY(-2px);
-    }
-
-    /* =========================
-       SECTIONS
-    ========================= */
-
-    section {
-      padding: 85px 0;
-    }
-
-    .section-title {
-      text-align: center;
-      margin-bottom: 45px;
-    }
-
-    .section-title h2 {
-      font-size: 2.25rem;
+      font-size: clamp(1.35rem, 3vw, 2rem);
       color: var(--white);
-      margin-bottom: 12px;
-    }
-
-    .section-title p {
-      color: var(--muted);
-      max-width: 740px;
-      margin: auto;
-    }
-
-    /* =========================
-       MISSION
-    ========================= */
-
-    .mission-box {
-      max-width: 900px;
-      margin: auto;
-      padding: 48px;
-      background:
-        linear-gradient(
-          145deg,
-          rgba(84, 230, 165, 0.10),
-          rgba(13, 40, 35, 0.88)
-        );
-      border: 1px solid var(--border);
-      border-radius: 22px;
-      text-align: center;
-      box-shadow: 0 25px 70px var(--shadow);
-    }
-
-    .mission-box h3 {
-      color: var(--green-light);
-      font-size: 1.7rem;
+      font-weight: 600;
       margin-bottom: 18px;
     }
 
-    .mission-box p {
-      color: var(--text);
+    .hero p {
+      max-width: 760px;
+      margin: auto;
+      color: var(--muted);
       font-size: 1.05rem;
     }
 
-    /* =========================
-       CARDS
-    ========================= */
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
+    .hero-buttons {
+      margin-top: 32px;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 14px;
     }
 
-    .card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 18px;
-      padding: 30px;
-      transition: 0.25s ease;
+    .button {
+      display: inline-block;
+      padding: 12px 22px;
+      border-radius: 10px;
+      border: 1px solid rgba(84, 230, 165, 0.35);
+      color: var(--mint-light);
+      background: rgba(84, 230, 165, 0.07);
+      transition: 0.2s ease;
     }
 
-    .card:hover {
-      transform: translateY(-4px);
-      background: var(--card-hover);
+    .button:hover {
+      background: rgba(84, 230, 165, 0.14);
+      transform: translateY(-1px);
     }
 
-    .card .number {
-      font-size: 0.85rem;
-      color: var(--green);
+    .button.primary {
+      background: var(--mint);
+      color: #052018;
       font-weight: 700;
-      margin-bottom: 12px;
     }
 
-    .card h3 {
+    .button.primary:hover {
+      background: var(--mint-light);
+    }
+
+    /* SECTIONS */
+
+    section {
+      padding: 82px 0;
+      scroll-margin-top: 80px;
+    }
+
+    .section-title {
+      margin-bottom: 38px;
+    }
+
+    .section-title .eyebrow {
+      color: var(--mint);
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    .section-title h2 {
+      font-size: clamp(2rem, 4vw, 3rem);
       color: var(--white);
       margin-bottom: 10px;
     }
 
+    .section-title p {
+      color: var(--muted);
+      max-width: 760px;
+    }
+
+    /* CARDS */
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+
+    .card {
+      background:
+        linear-gradient(
+          145deg,
+          rgba(84, 230, 165, 0.045),
+          rgba(84, 230, 165, 0.015)
+        ),
+        var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 25px;
+    }
+
+    .card h3 {
+      color: var(--white);
+      margin-bottom: 9px;
+      font-size: 1.12rem;
+    }
+
     .card p {
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
+
+    .number {
+      color: var(--mint);
+      font-size: 0.78rem;
+      font-weight: 800;
+      margin-bottom: 10px;
+      letter-spacing: 1px;
+    }
+
+    /* MISSION */
+
+    .mission-box {
+      padding: 38px;
+      border-radius: 18px;
+      border: 1px solid rgba(84, 230, 165, 0.2);
+      background:
+        linear-gradient(
+          135deg,
+          rgba(84, 230, 165, 0.08),
+          rgba(84, 230, 165, 0.025)
+        ),
+        var(--card);
+    }
+
+    .mission-box h3 {
+      color: var(--mint-light);
+      font-size: 1.45rem;
+      margin-bottom: 14px;
+    }
+
+    .mission-box p {
+      color: var(--text);
+      max-width: 900px;
+    }
+
+    /* TOKEN */
+
+    .token-table {
+      width: 100%;
+      border-collapse: collapse;
+      overflow: hidden;
+      border-radius: 14px;
+      background: var(--card);
+      border: 1px solid var(--border);
+    }
+
+    .token-table th,
+    .token-table td {
+      padding: 15px 18px;
+      border-bottom: 1px solid var(--border);
+      text-align: left;
+    }
+
+    .token-table th {
+      width: 35%;
+      color: var(--muted);
+      font-weight: 500;
+    }
+
+    .token-table td {
+      color: var(--white);
+      font-weight: 600;
+    }
+
+    .token-table tr:last-child th,
+    .token-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    /* STATS */
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 15px;
+      margin-bottom: 30px;
+    }
+
+    .stat {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 15px;
+      padding: 22px;
+      text-align: center;
+    }
+
+    .stat-value {
+      display: block;
+      color: var(--mint);
+      font-size: 1.45rem;
+      font-weight: 800;
+      margin-bottom: 4px;
+    }
+
+    .stat-label {
+      color: var(--muted);
+      font-size: 0.82rem;
+    }
+
+    /* SCHEDULE */
+
+    .schedule-wrap {
+      overflow-x: auto;
+      border-radius: 16px;
+      border: 1px solid var(--border);
+    }
+
+    .schedule {
+      width: 100%;
+      min-width: 720px;
+      border-collapse: collapse;
+      background: var(--card);
+    }
+
+    .schedule th,
+    .schedule td {
+      padding: 14px 16px;
+      border-bottom: 1px solid var(--border);
+      text-align: left;
+    }
+
+    .schedule th {
+      color: var(--mint-light);
+      background: var(--card-2);
+      font-size: 0.85rem;
+    }
+
+    .schedule td {
+      color: var(--text);
+      font-size: 0.9rem;
+    }
+
+    .schedule tr:last-child td {
+      border-bottom: none;
+    }
+
+    .release {
+      color: var(--mint-light);
+      font-weight: 700;
+    }
+
+    .burn {
+      color: #ffb3b3;
+      font-weight: 700;
+    }
+
+    .neutral {
       color: var(--muted);
     }
 
-    /* =========================
-       TOKEN
-    ========================= */
+    .note {
+      margin-top: 18px;
+      padding: 18px;
+      border-left: 3px solid var(--mint);
+      background: rgba(84, 230, 165, 0.045);
+      color: var(--muted);
+      border-radius: 8px;
+      font-size: 0.9rem;
+    }
 
-    .token-grid {
+    /* TRANSPARENCY */
+
+    .transparency-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+
+    .transparency-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 25px;
+    }
+
+    .transparency-card h3 {
+      color: var(--white);
+      margin-bottom: 8px;
+    }
+
+    .transparency-card p {
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    /* ROADMAP */
+
+    .roadmap {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: 15px;
     }
 
-    .token-item {
+    .phase {
+      position: relative;
       background: var(--card);
       border: 1px solid var(--border);
       border-radius: 15px;
       padding: 23px;
-      text-align: center;
     }
 
-    .token-item small {
-      display: block;
-      color: var(--muted);
-      margin-bottom: 7px;
-    }
-
-    .token-item strong {
-      display: block;
-      color: var(--green-light);
-      font-size: 1.12rem;
-    }
-
-    /* =========================
-       TOKENOMICS
-    ========================= */
-
-    .stats {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 16px;
-      margin-bottom: 35px;
-    }
-
-    .stat {
-      padding: 27px 20px;
-      text-align: center;
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 18px;
-    }
-
-    .stat strong {
-      display: block;
-      font-size: 1.8rem;
-      color: var(--green);
-      margin-bottom: 5px;
-    }
-
-    .stat span {
-      color: var(--muted);
-      font-size: 0.88rem;
-    }
-
-    .info-box {
-      padding: 30px;
-      margin-bottom: 30px;
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 18px;
-    }
-
-    .info-box h3 {
-      color: var(--green-light);
-      margin-bottom: 12px;
-    }
-
-    .info-box p {
-      color: var(--muted);
-    }
-
-    .table-wrapper {
-      overflow-x: auto;
-      border: 1px solid var(--border);
-      border-radius: 18px;
-      background: var(--card);
-    }
-
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      min-width: 850px;
-    }
-
-    th,
-    td {
-      padding: 15px 17px;
-      text-align: left;
-      border-bottom: 1px solid var(--border);
-    }
-
-    th {
-      background: rgba(84, 230, 165, 0.07);
-      color: var(--green-light);
-      font-size: 0.88rem;
-    }
-
-    td {
-      color: var(--text);
-      font-size: 0.92rem;
-    }
-
-    tr:last-child td {
-      border-bottom: none;
-    }
-
-    .release {
-      color: var(--green-light);
-      font-weight: 700;
-    }
-
-    .burn {
-      color: #efc5b4;
-      font-weight: 700;
-    }
-
-    .final-row td {
-      background: rgba(84, 230, 165, 0.06);
-      font-weight: 700;
-    }
-
-    /* =========================
-       TRANSPARENCY
-    ========================= */
-
-    .transparency {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 20px;
-    }
-
-    .notice {
-      padding: 30px;
-      border: 1px solid var(--border);
-      border-radius: 18px;
-      background: var(--card);
-    }
-
-    .notice h3 {
-      color: var(--green-light);
-      margin-bottom: 12px;
-    }
-
-    .notice p {
-      color: var(--muted);
-    }
-
-    /* =========================
-       ROADMAP
-    ========================= */
-
-    .roadmap {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 16px;
-    }
-
-    .phase {
-      padding: 25px;
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-    }
-
-    .phase span {
-      color: var(--green);
-      font-size: 0.82rem;
-      font-weight: 700;
+    .phase-number {
+      color: var(--mint);
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 1px;
+      margin-bottom: 10px;
     }
 
     .phase h3 {
       color: var(--white);
-      margin: 8px 0;
+      margin-bottom: 9px;
     }
 
     .phase p {
       color: var(--muted);
-      font-size: 0.92rem;
+      font-size: 0.88rem;
     }
 
-    /* =========================
-       CLOSING
-    ========================= */
+    /* NOTICE */
 
-    .closing {
-      text-align: center;
-      padding: 90px 20px;
+    .notice {
+      border: 1px solid rgba(255, 157, 157, 0.18);
+      background: rgba(255, 157, 157, 0.035);
+      border-radius: 15px;
+      padding: 24px;
     }
 
-    .closing h2 {
-      max-width: 780px;
-      margin: auto;
-      font-size: clamp(1.8rem, 4vw, 3rem);
-      color: var(--green-light);
-      line-height: 1.35;
+    .notice h3 {
+      color: var(--danger);
+      margin-bottom: 10px;
     }
 
-    .closing p {
-      margin-top: 20px;
+    .notice p {
       color: var(--muted);
+      font-size: 0.9rem;
     }
 
-    /* =========================
-       FOOTER
-    ========================= */
+    /* FOOTER */
 
     footer {
       border-top: 1px solid var(--border);
-      padding: 40px 0;
-      text-align: center;
+      padding: 35px 0;
       color: var(--muted);
+      text-align: center;
       font-size: 0.85rem;
     }
 
     footer strong {
-      color: var(--green-light);
+      color: var(--mint-light);
     }
 
-    /* =========================
-       MOBILE
-    ========================= */
+    /* MOBILE */
 
     @media (max-width: 900px) {
-
       .grid,
-      .transparency {
-        grid-template-columns: 1fr;
+      .roadmap {
+        grid-template-columns: repeat(2, 1fr);
       }
 
-      .token-grid,
       .stats {
         grid-template-columns: repeat(2, 1fr);
       }
-
-      .roadmap {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .nav-inner {
-        padding: 12px 0;
-        align-items: flex-start;
-        flex-direction: column;
-      }
     }
 
-    @media (max-width: 550px) {
+    @media (max-width: 650px) {
+      .nav-inner {
+        flex-direction: column;
+        justify-content: center;
+        padding: 15px 0;
+      }
+
+      .nav-links {
+        justify-content: center;
+        gap: 13px;
+      }
 
       .hero {
-        padding: 80px 0;
+        padding: 75px 0 65px;
       }
 
-      .hero h1 {
-        letter-spacing: -1px;
+      section {
+        padding: 60px 0;
       }
 
-      .token-grid,
-      .stats,
+      .grid,
+      .grid-2,
+      .transparency-grid,
       .roadmap {
         grid-template-columns: 1fr;
       }
 
-      .mission-box {
-        padding: 30px 22px;
+      .stats {
+        grid-template-columns: 1fr 1fr;
       }
 
-      section {
-        padding: 65px 0;
+      .mission-box {
+        padding: 25px;
       }
     }
   </style>
 </head>
 
-
 <body>
 
-  <!-- =========================
-       NAVIGATION
-  ========================= -->
+  <!-- NAVIGATION -->
 
   <nav>
     <div class="container nav-inner">
 
-      <div class="logo">
-        KindPulse
-      </div>
+      <a href="#top" class="brand">
+        Kind<span>Pulse</span>
+      </a>
 
-      <ul class="nav-links">
-        <li><a href="#mission">Mission</a></li>
-        <li><a href="#token">Token</a></li>
-        <li><a href="#tokenomics">Tokenomics</a></li>
-        <li><a href="#transparency">Transparency</a></li>
-        <li><a href="#roadmap">Roadmap</a></li>
-      </ul>
+      <div class="nav-links">
+        <a href="#mission">Mission</a>
+        <a href="#token">Token</a>
+        <a href="#tokenomics">Tokenomics</a>
+        <a href="#schedule">Schedule</a>
+        <a href="#transparency">Transparency</a>
+        <a href="#roadmap">Roadmap</a>
+      </div>
 
     </div>
   </nav>
 
 
-  <!-- =========================
-       HERO
-  ========================= -->
+  <main id="top">
 
-  <header class="hero">
+    <!-- HERO -->
 
-    <div class="container">
+    <header class="hero">
+      <div class="container">
 
-      <div class="eyebrow">
-        $KPUN · SOLANA · TOKEN-2022
-      </div>
+        <div class="badge">
+          $KPUN · Solana · Token-2022
+        </div>
 
-      <h1>
-        Kind<span>Pulse</span>
-      </h1>
-
-      <h2>
-        Compassion for Children. Transparency for Everyone.
-      </h2>
-
-      <p>
-        KindPulse is a charitable blockchain project created with a simple
-        purpose: to help support children facing serious illnesses while
-        building a responsible, transparent and long-term community.
-      </p>
-
-      <div class="buttons">
-
-        <a href="#mission" class="button primary">
-          Discover KindPulse
-        </a>
-
-        <a href="#tokenomics" class="button secondary">
-          View Tokenomics
-        </a>
-
-      </div>
-
-    </div>
-
-  </header>
-
-
-  <!-- =========================
-       MISSION
-  ========================= -->
-
-  <section id="mission">
-
-    <div class="container">
-
-      <div class="section-title">
+        <h1>KindPulse</h1>
 
         <h2>
-          Our Mission
+          Compassion for children. Transparency through blockchain.
         </h2>
 
         <p>
-          Technology becomes more meaningful when it helps people.
+          KindPulse is a charitable blockchain project designed to support
+          children facing serious and special illnesses while using blockchain
+          technology to make project activity and charitable resources easier
+          to verify.
         </p>
+
+        <div class="hero-buttons">
+          <a href="#mission" class="button primary">
+            Our Mission
+          </a>
+
+          <a href="#tokenomics" class="button">
+            Tokenomics
+          </a>
+        </div>
 
       </div>
+    </header>
 
 
-      <div class="mission-box">
+    <!-- MISSION -->
 
-        <h3>
-          Supporting Children Facing Serious Illness
-        </h3>
+    <section id="mission">
 
-        <p>
-          KindPulse was created to build a thoughtful connection between
-          blockchain technology and charitable support.
-        </p>
+      <div class="container">
 
-        <br>
+        <div class="section-title">
+          <div class="eyebrow">01 · Mission</div>
 
-        <p>
-          Our long-term goal is to help create sustainable resources
-          for children living with serious and special illnesses.
-        </p>
+          <h2>Helping children is the purpose.</h2>
 
-        <br>
+          <p>
+            Blockchain is the tool. The charitable mission comes first.
+          </p>
+        </div>
 
-        <p>
-          We believe kindness should be simple, responsible and
-          as transparent as possible.
-        </p>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- =========================
-       PRINCIPLES
-  ========================= -->
-
-  <section>
-
-    <div class="container">
-
-      <div class="section-title">
-
-        <h2>
-          What KindPulse Stands For
-        </h2>
-
-        <p>
-          Three simple principles guide the project.
-        </p>
-
-      </div>
-
-
-      <div class="grid">
-
-        <div class="card">
-
-          <div class="number">
-            01 · COMMUNITY
-          </div>
+        <div class="mission-box">
 
           <h3>
-            A Community With Purpose
+            Supporting Children Facing Serious Illness
           </h3>
 
           <p>
-            KindPulse aims to bring people together around a meaningful
-            purpose: helping children and building a responsible
-            long-term community.
+            KindPulse is being developed with a clear charitable mission:
+            to help support children affected by serious and special illnesses.
+            The project aims to create a transparent framework through which
+            community participation and project resources can contribute to
+            meaningful charitable causes.
+          </p>
+
+          <br />
+
+          <p>
+            Initial and future charitable recipients may include established
+            humanitarian organizations, hospitals, foundations, and other
+            verified organizations serving children in need.
           </p>
 
         </div>
 
+        <br />
 
-        <div class="card">
+        <div class="grid">
 
-          <div class="number">
-            02 · TRANSPARENCY
+          <div class="card">
+            <div class="number">01</div>
+            <h3>Community</h3>
+            <p>
+              A community can participate in the KindPulse ecosystem through
+              $KPUN and support the project's charitable mission.
+            </p>
           </div>
 
-          <h3>
-            Open and Verifiable
-          </h3>
-
-          <p>
-            Blockchain allows on-chain transactions to be publicly
-            examined. Important project addresses and information
-            will be shared as the infrastructure becomes ready.
-          </p>
-
-        </div>
-
-
-        <div class="card">
-
-          <div class="number">
-            03 · CHARITY
+          <div class="card">
+            <div class="number">02</div>
+            <h3>Transparency</h3>
+            <p>
+              Blockchain transactions can provide public and independently
+              verifiable records of on-chain movements and project activity.
+            </p>
           </div>
 
-          <h3>
-            Helping Children
-          </h3>
+          <div class="card">
+            <div class="number">03</div>
+            <h3>Charity</h3>
+            <p>
+              Resources designated for charitable purposes are intended to
+              support verified organizations and causes serving children.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- TOKEN -->
+
+    <section id="token">
+
+      <div class="container">
+
+        <div class="section-title">
+          <div class="eyebrow">02 · Token</div>
+
+          <h2>$KPUN</h2>
 
           <p>
-            The heart of KindPulse is its charitable purpose:
-            helping create sustainable resources for children
-            facing serious illnesses.
+            A Solana-based Token-2022 asset developed for the KindPulse
+            charitable ecosystem.
           </p>
-
         </div>
 
-      </div>
+        <table class="token-table">
 
-    </div>
+          <tr>
+            <th>Token</th>
+            <td>KindPulse</td>
+          </tr>
 
-  </section>
+          <tr>
+            <th>Symbol</th>
+            <td>$KPUN</td>
+          </tr>
 
+          <tr>
+            <th>Blockchain</th>
+            <td>Solana</td>
+          </tr>
 
-  <!-- =========================
-       TOKEN
-  ========================= -->
+          <tr>
+            <th>Token Standard</th>
+            <td>Token-2022</td>
+          </tr>
 
-  <section id="token">
+          <tr>
+            <th>Initial Supply</th>
+            <td>1,000,000,000 KPUN</td>
+          </tr>
 
-    <div class="container">
-
-      <div class="section-title">
-
-        <h2>
-          $KPUN
-        </h2>
-
-        <p>
-          The KindPulse token is designed on Solana using the Token-2022 standard.
-        </p>
-
-      </div>
-
-
-      <div class="token-grid">
-
-        <div class="token-item">
-          <small>Name</small>
-          <strong>KindPulse</strong>
-        </div>
-
-        <div class="token-item">
-          <small>Symbol</small>
-          <strong>$KPUN</strong>
-        </div>
-
-        <div class="token-item">
-          <small>Network</small>
-          <strong>Solana</strong>
-        </div>
-
-        <div class="token-item">
-          <small>Standard</small>
-          <strong>Token-2022</strong>
-        </div>
-
-        <div class="token-item">
-          <small>Initial Supply</small>
-          <strong>1,000,000,000</strong>
-        </div>
-
-        <div class="token-item">
-          <small>Initial Release</small>
-          <strong>20%</strong>
-        </div>
-
-        <div class="token-item">
-          <small>Planned Horizon</small>
-          <strong>15 Years</strong>
-        </div>
-
-        <div class="token-item">
-          <small>Planned Burn</small>
-          <strong>280,000,000</strong>
-        </div>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- =========================
-       TOKENOMICS
-  ========================= -->
-
-  <section id="tokenomics">
-
-    <div class="container">
-
-      <div class="section-title">
-
-        <h2>
-          15-Year Release & Burn
-        </h2>
-
-        <p>
-          KindPulse is designed around gradual token release and
-          scheduled burning of tokens that have not yet been released.
-        </p>
-
-      </div>
-
-
-      <div class="stats">
-
-        <div class="stat">
-          <strong>1B</strong>
-          <span>Initial Supply</span>
-        </div>
-
-        <div class="stat">
-          <strong>720M</strong>
-          <span>Planned Release</span>
-        </div>
-
-        <div class="stat">
-          <strong>280M</strong>
-          <span>Planned Burn</span>
-        </div>
-
-        <div class="stat">
-          <strong>15</strong>
-          <span>Year Horizon</span>
-        </div>
-
-      </div>
-
-
-      <div class="info-box">
-
-        <h3>
-          A Gentle and Predictable Approach
-        </h3>
-
-        <p>
-          The purpose of this structure is to avoid releasing the entire
-          supply at once and to establish a long-term, predictable path
-          for the project.
-        </p>
-
-        <br>
-
-        <p>
-          Scheduled burns are planned to come from tokens that have not
-          yet been released. They are not designed to take tokens away
-          from holders or purchasers.
-        </p>
-
-      </div>
-
-
-      <div class="table-wrapper">
-
-        <table>
-
-          <thead>
-
-            <tr>
-              <th>Year</th>
-              <th>Action</th>
-              <th>Rate</th>
-              <th>Amount</th>
-              <th>Total Released</th>
-              <th>Total Burned</th>
-              <th>Remaining</th>
-            </tr>
-
-          </thead>
-
-          <tbody id="tokenomicsTable">
-          </tbody>
+          <tr>
+            <th>Initial Release</th>
+            <td>20% — 200,000,000 KPUN</td>
+          </tr>
 
         </table>
 
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- =========================
-       TRANSPARENCY
-  ========================= -->
-
-  <section id="transparency">
-
-    <div class="container">
-
-      <div class="section-title">
-
-        <h2>
-          Transparency
-        </h2>
-
-        <p>
-          Trust should be supported by information people can examine.
-        </p>
+        <div class="note">
+          The supply schedule is a planned design and remains subject to final
+          technical implementation, security review, and launch documentation.
+        </div>
 
       </div>
 
+    </section>
 
-      <div class="transparency">
+
+    <!-- TOKENOMICS -->
+
+    <section id="tokenomics">
+
+      <div class="container">
+
+        <div class="section-title">
+          <div class="eyebrow">03 · Tokenomics</div>
+
+          <h2>15-Year Supply Model</h2>
+
+          <p>
+            A controlled release and burn structure designed to gradually
+            distribute the original supply while reducing unreleased supply
+            over time.
+          </p>
+        </div>
+
+
+        <div class="stats">
+
+          <div class="stat">
+            <span class="stat-value">1B</span>
+            <span class="stat-label">Initial Supply</span>
+          </div>
+
+          <div class="stat">
+            <span class="stat-value">720M</span>
+            <span class="stat-label">Planned Total Release</span>
+          </div>
+
+          <div class="stat">
+            <span class="stat-value">280M</span>
+            <span class="stat-label">Planned Total Burn</span>
+          </div>
+
+          <div class="stat">
+            <span class="stat-value">15 Years</span>
+            <span class="stat-label">Planned Schedule</span>
+          </div>
+
+        </div>
+
+
+        <div class="grid-2">
+
+          <div class="card">
+            <h3>Controlled Release</h3>
+            <p>
+              Tokens are planned to enter circulation gradually rather than
+              releasing the entire original supply at launch.
+            </p>
+          </div>
+
+          <div class="card">
+            <h3>Planned Burns</h3>
+            <p>
+              Planned burns are intended to come from tokens that have not yet
+              been released, rather than from tokens already held by users,
+              subject to final contract design.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- SCHEDULE -->
+
+    <section id="schedule">
+
+      <div class="container">
+
+        <div class="section-title">
+          <div class="eyebrow">04 · Release & Burn</div>
+
+          <h2>15-Year Schedule</h2>
+
+          <p>
+            The following table represents the current planned token supply
+            schedule based on the original 1 billion KPUN supply.
+          </p>
+        </div>
+
+
+        <div class="schedule-wrap">
+
+          <table class="schedule">
+
+            <thead>
+              <tr>
+                <th>Year</th>
+                <th>Action</th>
+                <th>Percentage</th>
+                <th>KPUN</th>
+                <th>Remaining Unreleased</th>
+              </tr>
+            </thead>
+
+            <tbody id="scheduleBody">
+              <!-- Generated by JavaScript -->
+            </tbody>
+
+          </table>
+
+        </div>
+
+
+        <div class="note">
+
+          <strong>Important:</strong>
+          This schedule is a planned tokenomics model. The actual blockchain
+          implementation of release and burn mechanisms will be determined
+          during final Token-2022 contract design and security review.
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- TRANSPARENCY -->
+
+    <section id="transparency">
+
+      <div class="container">
+
+        <div class="section-title">
+          <div class="eyebrow">05 · Transparency</div>
+
+          <h2>Built for verifiability.</h2>
+
+          <p>
+            Trust should be supported by information that can be independently
+            checked whenever technically and legally possible.
+          </p>
+        </div>
+
+
+        <div class="transparency-grid">
+
+          <div class="transparency-card">
+            <h3>On-Chain Records</h3>
+            <p>
+              Relevant blockchain transactions can be independently inspected
+              through the Solana network.
+            </p>
+          </div>
+
+          <div class="transparency-card">
+            <h3>Public Wallets</h3>
+            <p>
+              Designated project and charitable wallets are intended to be
+              publicly disclosed when they are established and secured.
+            </p>
+          </div>
+
+          <div class="transparency-card">
+            <h3>Multisignature Protection</h3>
+            <p>
+              The planned charitable reserve is intended to use a
+              multisignature wallet so that charitable funds are not controlled
+              by a single person.
+            </p>
+          </div>
+
+          <div class="transparency-card">
+            <h3>Charitable Reporting</h3>
+            <p>
+              Future charitable distributions should be accompanied by
+              appropriate transaction records and recipient information
+              whenever disclosure is legally and operationally possible.
+            </p>
+          </div>
+
+        </div>
+
+
+        <br />
+
+
+        <div class="card">
+
+          <h3>Planned Charity Reserve</h3>
+
+          <p>
+            KindPulse intends to establish a dedicated charitable reserve
+            protected by multisignature authorization. The reserve is not
+            intended to be permanently tied to a single charity or organization.
+            Depending on circumstances, charitable support may be directed to
+            verified hospitals, foundations, humanitarian organizations, or
+            international organizations serving children.
+          </p>
+
+          <br />
+
+          <p>
+            The final wallet structure, signers, authorization threshold, and
+            public wallet information will be documented before the reserve is
+            presented as an active feature.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- GOVERNANCE -->
+
+    <section>
+
+      <div class="container">
+
+        <div class="section-title">
+          <div class="eyebrow">06 · Governance</div>
+
+          <h2>Community Participation</h2>
+
+          <p>
+            Governance is planned as the project develops.
+          </p>
+        </div>
+
+
+        <div class="card">
+
+          <p>
+            KindPulse may introduce community participation in future decisions
+            concerning charitable priorities and ecosystem development.
+            Any governance mechanism will be publicly documented before it is
+            presented as an active feature of the project.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ROADMAP -->
+
+    <section id="roadmap">
+
+      <div class="container">
+
+        <div class="section-title">
+          <div class="eyebrow">07 · Roadmap</div>
+
+          <h2>Development in Stages</h2>
+
+          <p>
+            Development will proceed step by step with transparency at each
+            stage.
+          </p>
+        </div>
+
+
+        <div class="roadmap">
+
+          <div class="phase">
+            <div class="phase-number">PHASE 1</div>
+
+            <h3>Foundation</h3>
+
+            <p>
+              Project identity, website, documentation and token architecture.
+            </p>
+          </div>
+
+
+          <div class="phase">
+            <div class="phase-number">PHASE 2</div>
+
+            <h3>Token Launch</h3>
+
+            <p>
+              Solana Token-2022 deployment, security review and initial
+              distribution.
+            </p>
+          </div>
+
+
+          <div class="phase">
+            <div class="phase-number">PHASE 3</div>
+
+            <h3>Charity Infrastructure</h3>
+
+            <p>
+              Establish the protected charitable reserve and publish relevant
+              wallet information.
+            </p>
+          </div>
+
+
+          <div class="phase">
+            <div class="phase-number">PHASE 4</div>
+
+            <h3>Community Growth</h3>
+
+            <p>
+              Expand charitable partnerships, transparency tools and community
+              participation.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- IMPORTANT NOTICE -->
+
+    <section>
+
+      <div class="container">
 
         <div class="notice">
 
-          <h3>
-            On-Chain Records
-          </h3>
+          <h3>Important Notice</h3>
 
           <p>
-            Transactions executed on Solana can be publicly examined.
-            KindPulse intends to publish important official addresses
-            as the relevant infrastructure becomes ready.
+            KindPulse is a developing charitable blockchain project.
+            Information on this website describes the current intended design
+            and may change before launch as technical, legal, security and
+            operational requirements are finalized.
           </p>
 
-        </div>
-
-
-        <div class="notice">
-
-          <h3>
-            Charity Reserve
-          </h3>
+          <br />
 
           <p>
-            KindPulse intends to establish a dedicated reserve for
-            charitable purposes protected through a multisignature
-            structure rather than relying on one individual.
-          </p>
-
-        </div>
-
-
-        <div class="notice">
-
-          <h3>
-            Responsible Reporting
-          </h3>
-
-          <p>
-            Future charitable activity will be presented as clearly
-            as practical, including relevant transactions and
-            supporting documentation where available.
-          </p>
-
-        </div>
-
-
-        <div class="notice">
-
-          <h3>
-            Built Carefully
-          </h3>
-
-          <p>
-            Features that have not yet been implemented are described
-            as planned rather than being presented as completed
-            functionality.
+            $KPUN should not be presented as a guaranteed investment, financial
+            return, or promise of profit. Digital assets involve significant
+            risks. Users should conduct their own research and consider those
+            risks before participating.
           </p>
 
         </div>
 
       </div>
 
-    </div>
+    </section>
 
-  </section>
-
-
-  <!-- =========================
-       ROADMAP
-  ========================= -->
-
-  <section id="roadmap">
-
-    <div class="container">
-
-      <div class="section-title">
-
-        <h2>
-          Roadmap
-        </h2>
-
-        <p>
-          KindPulse is intended to grow carefully and responsibly.
-        </p>
-
-      </div>
+  </main>
 
 
-      <div class="roadmap">
-
-        <div class="phase">
-
-          <span>
-            PHASE 01
-          </span>
-
-          <h3>
-            Foundation
-          </h3>
-
-          <p>
-            Establish the project identity, documentation,
-            website and core structure.
-          </p>
-
-        </div>
-
-
-        <div class="phase">
-
-          <span>
-            PHASE 02
-          </span>
-
-          <h3>
-            Token
-          </h3>
-
-          <p>
-            Develop and launch the $KPUN Token-2022 infrastructure
-            on Solana.
-          </p>
-
-        </div>
-
-
-        <div class="phase">
-
-          <span>
-            PHASE 03
-          </span>
-
-          <h3>
-            Transparency
-          </h3>
-
-          <p>
-            Publish official addresses and make important project
-            information easier for the community to examine.
-          </p>
-
-        </div>
-
-
-        <div class="phase">
-
-          <span>
-            PHASE 04
-          </span>
-
-          <h3>
-            Charity
-          </h3>
-
-          <p>
-            Establish secure and responsible infrastructure
-            for charitable support.
-          </p>
-
-        </div>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- =========================
-       CLOSING MESSAGE
-  ========================= -->
-
-  <section class="closing">
-
-    <div class="container">
-
-      <h2>
-        Technology should not replace compassion.
-        It should help make compassion more transparent.
-      </h2>
-
-      <p>
-        KindPulse — created with kindness, built with responsibility.
-      </p>
-
-    </div>
-
-  </section>
-
-
-  <!-- =========================
-       DISCLAIMER
-  ========================= -->
-
-  <section>
-
-    <div class="container">
-
-      <div class="notice">
-
-        <h3>
-          Important Note
-        </h3>
-
-        <p>
-          KindPulse is a project under development.
-          Tokenomics, governance, charity infrastructure and other
-          components may be refined before final implementation
-          to improve security, clarity and long-term sustainability.
-        </p>
-
-        <br>
-
-        <p>
-          Nothing on this website should be interpreted as a promise
-          or guarantee of financial return.
-        </p>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- =========================
-       FOOTER
-  ========================= -->
+  <!-- FOOTER -->
 
   <footer>
 
     <div class="container">
 
-      <p>
-        <strong>KindPulse</strong> · $KPUN · Solana · Token-2022
-      </p>
+      <strong>KindPulse · $KPUN</strong>
 
-      <p>
-        Supporting children facing serious illnesses.
-      </p>
+      <br />
 
-      <p style="margin-top: 10px;">
-        © 2026 KindPulse. All rights reserved.
-      </p>
+      Compassion for children. Transparency through blockchain.
+
+      <br />
+
+      Built on Solana.
+
+      <br /><br />
+
+      © 2026 KindPulse. All rights reserved.
 
     </div>
 
   </footer>
 
 
-  <!-- =========================
-       TOKENOMICS CALCULATION
-  ========================= -->
+  <!-- TOKENOMICS JAVASCRIPT -->
 
   <script>
 
     /*
-      KINDPULSE — 15 YEAR PLANNED TOKENOMICS
+      KindPulse ($KPUN)
+      Planned 15-Year Tokenomics
 
       Initial supply:
-      1,000,000,000
+      1,000,000,000 KPUN
 
       Year 1:
-      20% Release = 200,000,000
+      +20% release
 
       Year 2:
-      10% Release = 100,000,000
+      +10% release
 
       Year 3:
-      4% Burn = 40,000,000
+      -4% burn
 
       Years 4, 6, 8, 10, 12, 14:
-      7% Release each year
+      +7% release
 
       Years 5, 7, 9, 11, 13, 15:
-      4% Burn each year
+      -4% burn
 
-      Total Release:
-      720,000,000
+      Total release:
+      72% = 720,000,000 KPUN
 
-      Total Burn:
-      280,000,000
-
-      Final Remaining:
-      0
+      Total burn:
+      28% = 280,000,000 KPUN
 
       IMPORTANT:
-      This JavaScript only displays the planned model.
-      It does NOT perform blockchain transactions.
+      This JavaScript only displays the planned schedule.
+      It does NOT execute blockchain releases or burns.
     */
 
 
-    const initialSupply = 1000000000;
+    const INITIAL_SUPPLY = 1000000000;
 
 
     const schedule = [
 
-      { year: 1,  action: "Release", rate: 20 },
+      {
+        year: 1,
+        type: "release",
+        percentage: 20
+      },
 
-      { year: 2,  action: "Release", rate: 10 },
+      {
+        year: 2,
+        type: "release",
+        percentage: 10
+      },
 
-      { year: 3,  action: "Burn", rate: 4 },
+      {
+        year: 3,
+        type: "burn",
+        percentage: 4
+      },
 
-      { year: 4,  action: "Release", rate: 7 },
+      {
+        year: 4,
+        type: "release",
+        percentage: 7
+      },
 
-      { year: 5,  action: "Burn", rate: 4 },
+      {
+        year: 5,
+        type: "burn",
+        percentage: 4
+      },
 
-      { year: 6,  action: "Release", rate: 7 },
+      {
+        year: 6,
+        type: "release",
+        percentage: 7
+      },
 
-      { year: 7,  action: "Burn", rate: 4 },
+      {
+        year: 7,
+        type: "burn",
+        percentage: 4
+      },
 
-      { year: 8,  action: "Release", rate: 7 },
+      {
+        year: 8,
+        type: "release",
+        percentage: 7
+      },
 
-      { year: 9,  action: "Burn", rate: 4 },
+      {
+        year: 9,
+        type: "burn",
+        percentage: 4
+      },
 
-      { year: 10, action: "Release", rate: 7 },
+      {
+        year: 10,
+        type: "release",
+        percentage: 7
+      },
 
-      { year: 11, action: "Burn", rate: 4 },
+      {
+        year: 11,
+        type: "burn",
+        percentage: 4
+      },
 
-      { year: 12, action: "Release", rate: 7 },
+      {
+        year: 12,
+        type: "release",
+        percentage: 7
+      },
 
-      { year: 13, action: "Burn", rate: 4 },
+      {
+        year: 13,
+        type: "burn",
+        percentage: 4
+      },
 
-      { year: 14, action: "Release", rate: 7 },
+      {
+        year: 14,
+        type: "release",
+        percentage: 7
+      },
 
-      { year: 15, action: "Burn", rate: 4 }
+      {
+        year: 15,
+        type: "burn",
+        percentage: 4
+      }
 
     ];
 
 
-    const table =
-      document.getElementById("tokenomicsTable");
+    const scheduleBody =
+      document.getElementById("scheduleBody");
 
 
-    let totalReleased = 0;
-    let totalBurned = 0;
-
-
-    function formatNumber(number) {
-
-      return number.toLocaleString("en-US");
-
-    }
+    let unreleasedSupply = INITIAL_SUPPLY;
 
 
     schedule.forEach(item => {
 
       const amount =
-        initialSupply * (item.rate / 100);
+        INITIAL_SUPPLY * (item.percentage / 100);
 
 
-      if (item.action === "Release") {
+      if (item.type === "release") {
 
-        totalReleased += amount;
+        unreleasedSupply -= amount;
 
       } else {
 
-        totalBurned += amount;
+        unreleasedSupply -= amount;
 
       }
-
-
-      const remaining =
-        initialSupply -
-        totalReleased -
-        totalBurned;
 
 
       const row =
         document.createElement("tr");
 
 
-      if (item.year === 15) {
-
-        row.classList.add("final-row");
-
-      }
+      const action =
+        item.type === "release"
+          ? "Release"
+          : "Burn";
 
 
       const actionClass =
-        item.action === "Release"
+        item.type === "release"
           ? "release"
           : "burn";
 
 
       row.innerHTML = `
 
-        <td>
-          Year ${item.year}
+        <td>Year ${item.year}</td>
+
+        <td class="${actionClass}">
+          ${action}
         </td>
 
         <td class="${actionClass}">
-          ${item.action}
+          ${item.percentage}%
         </td>
 
         <td>
-          ${item.rate}%
+          ${amount.toLocaleString()} KPUN
         </td>
 
         <td>
-          ${formatNumber(amount)}
-        </td>
-
-        <td>
-          ${formatNumber(totalReleased)}
-        </td>
-
-        <td>
-          ${formatNumber(totalBurned)}
-        </td>
-
-        <td>
-          ${formatNumber(Math.max(0, remaining))}
+          ${Math.max(0, unreleasedSupply).toLocaleString()} KPUN
         </td>
 
       `;
 
 
-      table.appendChild(row);
+      scheduleBody.appendChild(row);
 
     });
+
 
   </script>
 

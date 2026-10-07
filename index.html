@@ -64,7 +64,7 @@
       margin: auto;
     }
 
-    /* NAV */
+    /* NAV & SOCIALS */
 
     nav {
       position: sticky;
@@ -94,6 +94,12 @@
       color: var(--white);
     }
 
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
     .nav-links {
       display: flex;
       flex-wrap: wrap;
@@ -104,6 +110,31 @@
 
     .nav-links a:hover {
       color: var(--mint-light);
+    }
+
+    .social-links {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .social-icn {
+      color: var(--muted);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: color 0.2s, transform 0.2s;
+    }
+
+    .social-icn:hover {
+      color: var(--mint);
+      transform: translateY(-2px);
+    }
+
+    .social-icn svg {
+      width: 20px;
+      height: 20px;
+      fill: currentColor;
     }
 
     /* HERO */
@@ -180,6 +211,50 @@
       background: var(--mint-light);
     }
 
+    /* CONTRACT ADDRESS BOX (CA) */
+
+    .ca-container {
+      margin-top: 32px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .ca-box {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      padding: 10px 20px;
+      border-radius: 30px;
+      font-size: 0.88rem;
+      color: var(--muted);
+    }
+
+    .ca-label {
+      color: var(--mint);
+      font-weight: 700;
+    }
+
+    .ca-value {
+      font-family: monospace;
+      color: var(--white);
+    }
+
+    .copy-btn {
+      background: none;
+      border: none;
+      color: var(--muted);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      transition: color 0.2s;
+    }
+
+    .copy-btn:hover {
+      color: var(--mint);
+    }
+
     /* SECTIONS */
 
     section {
@@ -211,7 +286,7 @@
       max-width: 760px;
     }
 
-    /* CARDS */
+    /* CARDS & GRIDS */
 
     .grid {
       display: grid;
@@ -547,6 +622,13 @@
       color: var(--mint-light);
     }
 
+    .footer-socials {
+      display: flex;
+      justify-content: center;
+      gap: 18px;
+      margin: 15px 0;
+    }
+
     /* MOBILE */
 
     @media (max-width: 900px) {
@@ -611,15 +693,26 @@
         Kind<span>Pulse</span>
       </a>
 
-      <div class="nav-links">
-        <a href="#mission">Mission</a>
-        <a href="#token">Token</a>
-        <a href="#tokenomics">Tokenomics</a>
-        <a href="#howtobuy">How to Buy</a>
-        <a href="#schedule">Schedule</a>
-        <a href="#transparency">Transparency</a>
-        <a href="#faq">FAQ</a>
-        <a href="#roadmap">Roadmap</a>
+      <div class="nav-right">
+        <div class="nav-links">
+          <a href="#mission">Mission</a>
+          <a href="#token">Token</a>
+          <a href="#tokenomics">Tokenomics</a>
+          <a href="#howtobuy">How to Buy</a>
+          <a href="#schedule">Schedule</a>
+          <a href="#transparency">Transparency</a>
+          <a href="#faq">FAQ</a>
+          <a href="#roadmap">Roadmap</a>
+        </div>
+
+        <div class="social-links">
+          <a href="https://x.com" target="_blank" rel="noopener noreferrer" class="social-icn" title="X (Twitter)">
+            <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          </a>
+          <a href="https://t.me" target="_blank" rel="noopener noreferrer" class="social-icn" title="Telegram">
+            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 0 0-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.74-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/></svg>
+          </a>
+        </div>
       </div>
 
     </div>
@@ -658,6 +751,17 @@
           <a href="#howtobuy" class="button">
             How to Buy $KPUN
           </a>
+        </div>
+
+        <!-- CONTRACT ADDRESS BOX -->
+        <div class="ca-container">
+          <div class="ca-box">
+            <span class="ca-label">CA:</span>
+            <span class="ca-value" id="ca-text">Squads v4 Deployment Pending (Mainnet)</span>
+            <button class="copy-btn" onclick="copyCA()" title="Copy Contract Address">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+            </button>
+          </div>
         </div>
 
       </div>
@@ -1177,7 +1281,17 @@
     <div class="container">
       <strong>KindPulse · $KPUN</strong><br />
       Compassion for children. Transparency through blockchain.<br />
-      Built on Solana.<br /><br />
+      Built on Solana.
+
+      <div class="footer-socials">
+        <a href="https://x.com" target="_blank" rel="noopener noreferrer" class="social-icn" title="X (Twitter)">
+          <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        </a>
+        <a href="https://t.me" target="_blank" rel="noopener noreferrer" class="social-icn" title="Telegram">
+          <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 0 0-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.74-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/></svg>
+        </a>
+      </div>
+
       © 2026 KindPulse. All rights reserved.
     </div>
   </footer>
@@ -1231,6 +1345,13 @@
 
     function toggleFaq(element) {
       element.classList.toggle('active');
+    }
+
+    function copyCA() {
+      const caText = document.getElementById('ca-text').innerText;
+      navigator.clipboard.writeText(caText).then(() => {
+        alert('Contract Address copied to clipboard!');
+      });
     }
   </script>
 

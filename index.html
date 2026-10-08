@@ -7,16 +7,16 @@
 
   <style>
     :root {
-      --bg: #f7fbff;
-      --card: #ffffff;
-      --text: #17324d;
-      --muted: #60758a;
-      --primary: #24a7a0;
-      --primary-dark: #147c77;
-      --accent: #ffb84d;
-      --border: #dce8f0;
-      --soft: #eaf8f7;
-      --shadow: 0 12px 35px rgba(31, 72, 105, 0.08);
+      --bg: #061714;
+      --card: #0d2823;
+      --text: #e9fff6;
+      --muted: #a7cfc0;
+      --primary: #54e6a5;
+      --primary-dark: #91f5c7;
+      --accent: #36d99a;
+      --border: #1e4a3e;
+      --soft: #12352d;
+      --shadow: 0 12px 35px rgba(0, 0, 0, 0.25);
     }
 
     * {
@@ -47,7 +47,7 @@
     }
 
     header {
-      background: linear-gradient(135deg, #e9fbfa, #fff8e9);
+      background: linear-gradient(135deg, #09231e, #0d3028);
       border-bottom: 1px solid var(--border);
       position: sticky;
       top: 0;
@@ -66,7 +66,7 @@
     .logo {
       font-size: 1.35rem;
       font-weight: 800;
-      color: var(--primary-dark);
+      color: var(--primary);
     }
 
     .nav-links {
@@ -79,14 +79,14 @@
     }
 
     .nav-links a:hover {
-      color: var(--primary-dark);
+      color: var(--primary);
     }
 
     .hero {
       padding: 95px 0 75px;
       background:
-        radial-gradient(circle at 15% 20%, rgba(36,167,160,0.12), transparent 28%),
-        radial-gradient(circle at 85% 15%, rgba(255,184,77,0.15), transparent 28%);
+        radial-gradient(circle at 15% 20%, rgba(84,230,165,0.16), transparent 28%),
+        radial-gradient(circle at 85% 15%, rgba(45,212,191,0.13), transparent 28%);
     }
 
     .hero-grid {
@@ -97,7 +97,7 @@
     }
 
     .eyebrow {
-      color: var(--primary-dark);
+      color: var(--primary);
       font-weight: 700;
       margin-bottom: 14px;
     }
@@ -106,7 +106,7 @@
       font-size: clamp(2.7rem, 7vw, 5rem);
       line-height: 1;
       margin-bottom: 20px;
-      color: var(--primary-dark);
+      color: var(--primary);
     }
 
     .hero h2 {
@@ -131,7 +131,7 @@
     .hero-card .big {
       font-size: 2.5rem;
       font-weight: 800;
-      color: var(--primary-dark);
+      color: var(--primary);
     }
 
     .hero-card span {
@@ -156,12 +156,12 @@
 
     .btn-primary {
       background: var(--primary);
-      color: white;
+      color: #062019;
     }
 
     .btn-secondary {
-      background: white;
-      color: var(--primary-dark);
+      background: transparent;
+      color: var(--primary);
     }
 
     section {
@@ -216,7 +216,7 @@
     .token-table {
       width: 100%;
       border-collapse: collapse;
-      background: white;
+      background: var(--card);
       border: 1px solid var(--border);
       border-radius: 16px;
       overflow: hidden;
@@ -232,7 +232,7 @@
 
     .token-table th {
       background: var(--soft);
-      color: var(--primary-dark);
+      color: var(--primary);
     }
 
     .token-table tr:last-child td {
@@ -240,12 +240,12 @@
     }
 
     .release {
-      color: var(--primary-dark);
+      color: var(--primary);
       font-weight: 700;
     }
 
     .burn {
-      color: #b45d00;
+      color: #7ff7ca;
       font-weight: 700;
     }
 
@@ -257,7 +257,7 @@
     }
 
     .stat {
-      background: white;
+      background: var(--card);
       border: 1px solid var(--border);
       border-radius: 16px;
       padding: 22px;
@@ -268,7 +268,7 @@
     .stat strong {
       display: block;
       font-size: 1.45rem;
-      color: var(--primary-dark);
+      color: var(--primary);
       margin-bottom: 5px;
     }
 
@@ -278,11 +278,11 @@
     }
 
     .notice {
-      background: #fff8e9;
-      border: 1px solid #f5d79b;
+      background: #10342b;
+      border: 1px solid #26735d;
       border-radius: 16px;
       padding: 20px;
-      color: #70501c;
+      color: #bdf8dc;
       margin-top: 25px;
     }
 
@@ -292,7 +292,7 @@
     }
 
     .phase {
-      background: white;
+      background: var(--card);
       border: 1px solid var(--border);
       border-radius: 16px;
       padding: 22px;
@@ -306,12 +306,13 @@
     }
 
     /* SOCIAL MEDIA */
+
     .social-links {
       display: flex;
       justify-content: center;
       align-items: center;
       gap: 14px;
-      margin-top: 22px;
+      margin-top: 18px;
     }
 
     .social-link {
@@ -321,8 +322,8 @@
       align-items: center;
       justify-content: center;
       border-radius: 50%;
-      background: #ffffff;
-      color: var(--primary-dark);
+      background: #0d2823;
+      color: var(--primary);
       border: 1px solid var(--border);
       box-shadow: var(--shadow);
       transition: 0.2s ease;
@@ -331,6 +332,7 @@
     .social-link:hover {
       transform: translateY(-3px);
       background: var(--soft);
+      color: var(--primary-dark);
     }
 
     .social-link svg {
@@ -341,9 +343,10 @@
 
     footer {
       padding: 35px 0;
-      background: #eaf3f8;
+      background: #04110f;
       color: var(--muted);
       text-align: center;
+      border-top: 1px solid var(--border);
     }
 
     @media (max-width: 850px) {
@@ -934,6 +937,7 @@
     </p>
 
     <!-- SOCIAL MEDIA ICONS -->
+
     <div class="social-links">
 
       <!-- X -->
@@ -953,7 +957,7 @@
       <!-- Instagram -->
       <span class="social-link" aria-label="Instagram" title="Instagram">
         <svg viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M7.5 2h9A5.5 5.5 0 0 1 22 7.5v9a5.5 5.5 0 0 1-5.5 5.5h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2Zm0 2A3.5 3.5 0 0 0 4 7.5v9A3.5 3.5 0 0 0 7.5 20h9a3.5 3.5 0 0 0 3.5-3.5v-9A3.5 3.5 0 0 0 16.5 4h-9Zm9.75 1.5a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2a3 3 0 1 0 0 6 3 3 0 0 0-6Z"/>
+          <path d="M7.5 2h9A5.5 5.5 0 0 1 22 7.5v9a5.5 5.5 0 0 1-5.5 5.5h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2Zm0 2A3.5 3.5 0 0 0 4 7.5v9A3.5 3.5 0 0 0 7.5 20h9a3.5 3.5 0 0 0 3.5-3.5v-9A3.5 3.5 0 0 0 16.5 4h-9Zm9.75 1.5a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2a3 3 0 1 0 0 6 3 3 0 0 0-3-3Z"/>
         </svg>
       </span>
 

@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -306,6 +305,40 @@
       font-size: 0.9rem;
     }
 
+    /* SOCIAL MEDIA */
+    .social-links {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 14px;
+      margin-top: 22px;
+    }
+
+    .social-link {
+      width: 44px;
+      height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background: #ffffff;
+      color: var(--primary-dark);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      transition: 0.2s ease;
+    }
+
+    .social-link:hover {
+      transform: translateY(-3px);
+      background: var(--soft);
+    }
+
+    .social-link svg {
+      width: 21px;
+      height: 21px;
+      fill: currentColor;
+    }
+
     footer {
       padding: 35px 0;
       background: #eaf3f8;
@@ -371,7 +404,10 @@
 
         <h1>KindPulse</h1>
 
-        <h2>Compassion for children.<br>Transparency through blockchain.</h2>
+        <h2>
+          Compassion for children.<br>
+          Transparency through blockchain.
+        </h2>
 
         <p>
           KindPulse is a charitable blockchain project designed to support
@@ -440,6 +476,7 @@
         <div class="card">
           <div class="section-number">01</div>
           <h3>Community</h3>
+
           <p>
             A community can participate in the KindPulse ecosystem through
             $KPUN and support the project's charitable mission.
@@ -449,6 +486,7 @@
         <div class="card">
           <div class="section-number">02</div>
           <h3>Transparency</h3>
+
           <p>
             Blockchain transactions can provide public and independently
             verifiable records of on-chain movements and project activity.
@@ -458,6 +496,7 @@
         <div class="card">
           <div class="section-number">03</div>
           <h3>Charity</h3>
+
           <p>
             Resources designated for charitable purposes are intended to
             support verified organizations and causes serving children.
@@ -483,6 +522,7 @@
       </p>
 
       <table class="token-table">
+
         <tr>
           <th>Token</th>
           <td>KindPulse</td>
@@ -512,6 +552,7 @@
           <th>Initial Release</th>
           <td>20% — 200,000,000 KPUN</td>
         </tr>
+
       </table>
 
       <div class="notice">
@@ -808,6 +849,7 @@
         <div class="phase">
           <div class="phase-number">Phase 1</div>
           <h3>Foundation</h3>
+
           <p>
             Project identity, website, documentation and token architecture.
           </p>
@@ -816,6 +858,7 @@
         <div class="phase">
           <div class="phase-number">Phase 2</div>
           <h3>Token Launch</h3>
+
           <p>
             Solana Token-2022 deployment, security review and initial
             distribution.
@@ -825,6 +868,7 @@
         <div class="phase">
           <div class="phase-number">Phase 3</div>
           <h3>Charity Infrastructure</h3>
+
           <p>
             Establish the protected charitable reserve and publish relevant
             wallet information.
@@ -834,6 +878,7 @@
         <div class="phase">
           <div class="phase-number">Phase 4</div>
           <h3>Community Growth</h3>
+
           <p>
             Expand charitable partnerships, transparency tools and community
             participation.
@@ -876,6 +921,7 @@
 </main>
 
 
+<!-- FOOTER -->
 <footer>
   <div class="container">
 
@@ -887,7 +933,33 @@
       Compassion for children. Transparency through blockchain.
     </p>
 
-    <p style="margin-top:8px;">
+    <!-- SOCIAL MEDIA ICONS -->
+    <div class="social-links">
+
+      <!-- X -->
+      <span class="social-link" aria-label="X" title="X">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817-5.963 6.817H1.684l7.73-8.835L1.254 2.25H8.08l4.713 6.231L18.244 2.25Zm-1.161 17.52h1.833L7.084 4.126H5.117L17.083 19.77Z"/>
+        </svg>
+      </span>
+
+      <!-- Telegram -->
+      <span class="social-link" aria-label="Telegram" title="Telegram">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M21.5 3.5 2.9 10.7c-1.27.51-1.26 1.21-.23 1.52l4.77 1.49 1.82 5.56c.22.61.11.86.75.86.5 0 .72-.23.99-.5l2.39-2.32 4.97 3.67c.91.5 1.57.24 1.8-.84L23.03 5c.34-1.34-.51-1.95-1.53-1.5ZM8.17 13.36l10.88-6.87c.54-.33 1.03-.15.63.21l-8.8 7.94-.34 3.64-1.37-4.92Z"/>
+        </svg>
+      </span>
+
+      <!-- Instagram -->
+      <span class="social-link" aria-label="Instagram" title="Instagram">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M7.5 2h9A5.5 5.5 0 0 1 22 7.5v9a5.5 5.5 0 0 1-5.5 5.5h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2Zm0 2A3.5 3.5 0 0 0 4 7.5v9A3.5 3.5 0 0 0 7.5 20h9a3.5 3.5 0 0 0 3.5-3.5v-9A3.5 3.5 0 0 0 16.5 4h-9Zm9.75 1.5a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2a3 3 0 1 0 0 6 3 3 0 0 0-6Z"/>
+        </svg>
+      </span>
+
+    </div>
+
+    <p style="margin-top:15px;">
       Built on Solana.
     </p>
 
@@ -900,4 +972,3 @@
 
 </body>
 </html>
-```

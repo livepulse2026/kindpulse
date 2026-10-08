@@ -4,19 +4,18 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>KindPulse ($KPUN) — Compassion Powered by Blockchain</title>
-
   <style>
     :root {
-      --bg: #061714;
-      --card: #0d2823;
-      --text: #e9fff6;
-      --muted: #a7cfc0;
-      --primary: #54e6a5;
-      --primary-dark: #91f5c7;
-      --accent: #36d99a;
-      --border: #1e4a3e;
-      --soft: #12352d;
-      --shadow: 0 12px 35px rgba(0, 0, 0, 0.25);
+      --bg: #f7fbff;
+      --card: #ffffff;
+      --text: #17324d;
+      --muted: #60758a;
+      --primary: #24a7a0;
+      --primary-dark: #147c77;
+      --accent: #ffb84d;
+      --border: #dce8f0;
+      --soft: #eaf8f7;
+      --shadow: 0 12px 35px rgba(31, 72, 105, 0.08);
     }
 
     * {
@@ -28,7 +27,6 @@
     html {
       scroll-behavior: smooth;
     }
-
     body {
       font-family: Arial, Helvetica, sans-serif;
       background: var(--bg);
@@ -47,14 +45,13 @@
     }
 
     header {
-      background: linear-gradient(135deg, #09231e, #0d3028);
+      background: linear-gradient(135deg, #e9fbfa, #fff8e9);
       border-bottom: 1px solid var(--border);
       position: sticky;
       top: 0;
       z-index: 100;
       backdrop-filter: blur(10px);
     }
-
     .nav {
       min-height: 70px;
       display: flex;
@@ -66,7 +63,7 @@
     .logo {
       font-size: 1.35rem;
       font-weight: 800;
-      color: var(--primary);
+      color: var(--primary-dark);
     }
 
     .nav-links {
@@ -79,14 +76,13 @@
     }
 
     .nav-links a:hover {
-      color: var(--primary);
+      color: var(--primary-dark);
     }
-
     .hero {
       padding: 95px 0 75px;
       background:
-        radial-gradient(circle at 15% 20%, rgba(84,230,165,0.16), transparent 28%),
-        radial-gradient(circle at 85% 15%, rgba(45,212,191,0.13), transparent 28%);
+        radial-gradient(circle at 15% 20%, rgba(36,167,160,0.12), transparent 28%),
+        radial-gradient(circle at 85% 15%, rgba(255,184,77,0.15), transparent 28%);
     }
 
     .hero-grid {
@@ -97,16 +93,15 @@
     }
 
     .eyebrow {
-      color: var(--primary);
+      color: var(--primary-dark);
       font-weight: 700;
       margin-bottom: 14px;
     }
-
     h1 {
       font-size: clamp(2.7rem, 7vw, 5rem);
       line-height: 1;
       margin-bottom: 20px;
-      color: var(--primary);
+      color: var(--primary-dark);
     }
 
     .hero h2 {
@@ -127,11 +122,10 @@
       padding: 30px;
       box-shadow: var(--shadow);
     }
-
     .hero-card .big {
       font-size: 2.5rem;
       font-weight: 800;
-      color: var(--primary);
+      color: var(--primary-dark);
     }
 
     .hero-card span {
@@ -153,15 +147,14 @@
       font-weight: 700;
       border: 1px solid var(--primary);
     }
-
     .btn-primary {
       background: var(--primary);
-      color: #062019;
+      color: white;
     }
 
     .btn-secondary {
-      background: transparent;
-      color: var(--primary);
+      background: white;
+      color: var(--primary-dark);
     }
 
     section {
@@ -182,7 +175,6 @@
     h3 {
       margin-bottom: 10px;
     }
-
     .lead {
       color: var(--muted);
       max-width: 850px;
@@ -208,7 +200,6 @@
       padding: 25px;
       box-shadow: var(--shadow);
     }
-
     .card p {
       color: var(--muted);
     }
@@ -216,7 +207,7 @@
     .token-table {
       width: 100%;
       border-collapse: collapse;
-      background: var(--card);
+      background: white;
       border: 1px solid var(--border);
       border-radius: 16px;
       overflow: hidden;
@@ -229,10 +220,9 @@
       text-align: left;
       border-bottom: 1px solid var(--border);
     }
-
     .token-table th {
       background: var(--soft);
-      color: var(--primary);
+      color: var(--primary-dark);
     }
 
     .token-table tr:last-child td {
@@ -240,12 +230,12 @@
     }
 
     .release {
-      color: var(--primary);
+      color: var(--primary-dark);
       font-weight: 700;
     }
 
     .burn {
-      color: #7ff7ca;
+      color: #b45d00;
       font-weight: 700;
     }
 
@@ -255,9 +245,8 @@
       gap: 15px;
       margin: 30px 0;
     }
-
     .stat {
-      background: var(--card);
+      background: white;
       border: 1px solid var(--border);
       border-radius: 16px;
       padding: 22px;
@@ -268,7 +257,7 @@
     .stat strong {
       display: block;
       font-size: 1.45rem;
-      color: var(--primary);
+      color: var(--primary-dark);
       margin-bottom: 5px;
     }
 
@@ -276,13 +265,12 @@
       color: var(--muted);
       font-size: 0.9rem;
     }
-
     .notice {
-      background: #10342b;
-      border: 1px solid #26735d;
+      background: #fff8e9;
+      border: 1px solid #f5d79b;
       border-radius: 16px;
       padding: 20px;
-      color: #bdf8dc;
+      color: #70501c;
       margin-top: 25px;
     }
 
@@ -292,7 +280,7 @@
     }
 
     .phase {
-      background: var(--card);
+      background: white;
       border: 1px solid var(--border);
       border-radius: 16px;
       padding: 22px;
@@ -304,49 +292,11 @@
       font-weight: 800;
       font-size: 0.9rem;
     }
-
-    /* SOCIAL MEDIA */
-
-    .social-links {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 14px;
-      margin-top: 18px;
-    }
-
-    .social-link {
-      width: 44px;
-      height: 44px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 50%;
-      background: #0d2823;
-      color: var(--primary);
-      border: 1px solid var(--border);
-      box-shadow: var(--shadow);
-      transition: 0.2s ease;
-    }
-
-    .social-link:hover {
-      transform: translateY(-3px);
-      background: var(--soft);
-      color: var(--primary-dark);
-    }
-
-    .social-link svg {
-      width: 21px;
-      height: 21px;
-      fill: currentColor;
-    }
-
     footer {
       padding: 35px 0;
-      background: #04110f;
+      background: #eaf3f8;
       color: var(--muted);
       text-align: center;
-      border-top: 1px solid var(--border);
     }
 
     @media (max-width: 850px) {
@@ -370,7 +320,6 @@
       .token-table {
         font-size: 0.9rem;
       }
-
       .token-table th,
       .token-table td {
         padding: 10px;
@@ -407,14 +356,10 @@
 
         <h1>KindPulse</h1>
 
-        <h2>
-          Compassion for children.<br>
-          Transparency through blockchain.
-        </h2>
-
+        <h2>Compassion for children.<br>Transparency through blockchain.</h2>
         <p>
           KindPulse is a charitable blockchain project designed to support
-          children facing serious and special illnesses while using blockchain
+          children facing serious or complex illnesses while using blockchain
           technology to make project activity and charitable resources easier
           to verify.
         </p>
@@ -445,7 +390,6 @@
     <div class="container">
 
       <div class="section-number">01 · Mission</div>
-
       <h2>Helping children is the purpose.</h2>
 
       <p class="lead">
@@ -453,11 +397,10 @@
       </p>
 
       <div class="card">
-        <h3>Supporting Children Facing Serious Illness</h3>
-
+        <h3>Supporting Children Facing Serious or Complex Illnesses</h3>
         <p>
           KindPulse is being developed with a clear charitable mission:
-          to help support children affected by serious and special illnesses.
+          to help support children affected by serious or complex illnesses.
           The project aims to create a transparent framework through which
           community participation and project resources can contribute to
           meaningful charitable causes.
@@ -479,7 +422,6 @@
         <div class="card">
           <div class="section-number">01</div>
           <h3>Community</h3>
-
           <p>
             A community can participate in the KindPulse ecosystem through
             $KPUN and support the project's charitable mission.
@@ -489,7 +431,6 @@
         <div class="card">
           <div class="section-number">02</div>
           <h3>Transparency</h3>
-
           <p>
             Blockchain transactions can provide public and independently
             verifiable records of on-chain movements and project activity.
@@ -499,7 +440,6 @@
         <div class="card">
           <div class="section-number">03</div>
           <h3>Charity</h3>
-
           <p>
             Resources designated for charitable purposes are intended to
             support verified organizations and causes serving children.
@@ -518,14 +458,12 @@
       <div class="section-number">02 · Token</div>
 
       <h2>$KPUN</h2>
-
       <p class="lead">
         A Solana-based Token-2022 asset being developed for the KindPulse
         charitable ecosystem.
       </p>
 
       <table class="token-table">
-
         <tr>
           <th>Token</th>
           <td>KindPulse</td>
@@ -555,7 +493,6 @@
           <th>Initial Release</th>
           <td>20% — 200,000,000 KPUN</td>
         </tr>
-
       </table>
 
       <div class="notice">
@@ -578,7 +515,7 @@
       <p class="lead">
         A controlled release and burn structure designed around a
         1 billion KPUN initial supply, with planned burns coming from
-        tokens that have not yet been released.
+        tokens reserved for future release.
       </p>
 
       <div class="stats">
@@ -618,10 +555,9 @@
 
         <div class="card">
           <h3>Planned Burns</h3>
-
           <p>
-            Planned burns are intended to come from tokens that have not yet
-            been released, rather than from tokens already held by users,
+            Planned burns are intended to come from tokens reserved for future
+            release, rather than from tokens already held by users,
             subject to final contract design.
           </p>
         </div>
@@ -639,7 +575,6 @@
       <div class="section-number">04 · Release &amp; Burn</div>
 
       <h2>12-Year Schedule</h2>
-
       <p class="lead">
         The following table represents the current planned token supply
         schedule based on the initial 1 billion KPUN supply.
@@ -764,7 +699,6 @@
       </div>
 
       <div class="notice">
-
         <strong>Planned totals:</strong>
         64% release = 640,000,000 KPUN.
         36% burn = 360,000,000 KPUN.
@@ -772,13 +706,12 @@
         Together, these represent the full
         1,000,000,000 KPUN initial supply.
 
-        The planned burns are intended to be taken from tokens that have not
-        yet been released. The actual blockchain implementation of release
+        The planned burns are intended to be taken from tokens reserved for
+        future release. The actual blockchain implementation of release
         and burn mechanisms will be determined during final Token-2022
         contract design and security review.
 
       </div>
-
     </div>
   </section>
 
@@ -800,7 +733,6 @@
 
         <div class="card">
           <h3>On-Chain Records</h3>
-
           <p>
             Relevant blockchain transactions can be independently inspected
             through the Solana network explorer once the relevant
@@ -852,7 +784,6 @@
         <div class="phase">
           <div class="phase-number">Phase 1</div>
           <h3>Foundation</h3>
-
           <p>
             Project identity, website, documentation and token architecture.
           </p>
@@ -861,7 +792,6 @@
         <div class="phase">
           <div class="phase-number">Phase 2</div>
           <h3>Token Launch</h3>
-
           <p>
             Solana Token-2022 deployment, security review and initial
             distribution.
@@ -871,7 +801,6 @@
         <div class="phase">
           <div class="phase-number">Phase 3</div>
           <h3>Charity Infrastructure</h3>
-
           <p>
             Establish the protected charitable reserve and publish relevant
             wallet information.
@@ -881,7 +810,6 @@
         <div class="phase">
           <div class="phase-number">Phase 4</div>
           <h3>Community Growth</h3>
-
           <p>
             Expand charitable partnerships, transparency tools and community
             participation.
@@ -901,7 +829,6 @@
       <div class="notice">
 
         <strong>Important Notice</strong>
-
         <p style="margin-top:8px;">
           KindPulse is a developing charitable blockchain project.
           Information on this website describes the current intended design
@@ -924,7 +851,6 @@
 </main>
 
 
-<!-- FOOTER -->
 <footer>
   <div class="container">
 
@@ -936,34 +862,7 @@
       Compassion for children. Transparency through blockchain.
     </p>
 
-    <!-- SOCIAL MEDIA ICONS -->
-
-    <div class="social-links">
-
-      <!-- X -->
-      <span class="social-link" aria-label="X" title="X">
-        <svg viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817-5.963 6.817H1.684l7.73-8.835L1.254 2.25H8.08l4.713 6.231L18.244 2.25Zm-1.161 17.52h1.833L7.084 4.126H5.117L17.083 19.77Z"/>
-        </svg>
-      </span>
-
-      <!-- Telegram -->
-      <span class="social-link" aria-label="Telegram" title="Telegram">
-        <svg viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M21.5 3.5 2.9 10.7c-1.27.51-1.26 1.21-.23 1.52l4.77 1.49 1.82 5.56c.22.61.11.86.75.86.5 0 .72-.23.99-.5l2.39-2.32 4.97 3.67c.91.5 1.57.24 1.8-.84L23.03 5c.34-1.34-.51-1.95-1.53-1.5ZM8.17 13.36l10.88-6.87c.54-.33 1.03-.15.63.21l-8.8 7.94-.34 3.64-1.37-4.92Z"/>
-        </svg>
-      </span>
-
-      <!-- Instagram -->
-      <span class="social-link" aria-label="Instagram" title="Instagram">
-        <svg viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M7.5 2h9A5.5 5.5 0 0 1 22 7.5v9a5.5 5.5 0 0 1-5.5 5.5h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2Zm0 2A3.5 3.5 0 0 0 4 7.5v9A3.5 3.5 0 0 0 7.5 20h9a3.5 3.5 0 0 0 3.5-3.5v-9A3.5 3.5 0 0 0 16.5 4h-9Zm9.75 1.5a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2a3 3 0 1 0 0 6 3 3 0 0 0-3-3Z"/>
-        </svg>
-      </span>
-
-    </div>
-
-    <p style="margin-top:15px;">
+    <p style="margin-top:8px;">
       Built on Solana.
     </p>
 
